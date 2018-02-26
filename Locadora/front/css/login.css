@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+/* LOGIN */
+.login, .cadastrar{
+    width: 330px;
+    height: auto;
+    background-color: white;
+    margin: 50px auto;
+    box-shadow: 2px 2px 1px darkgray;
+    display: block;
+}
+
+.tituloLogin, .tituloCadastro {
+    text-align: center;
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid darkgray;
+}
+
+.inputLogin, .inputCadastro {
+    margin: 10px;
+    text-align: center;
+}
+
+#username, #password, #usernameCad, #passwordCad, #confirmPassword {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid darkgray;
+    text-align: center;
+    padding: 2px;
+    outline: none;
+}
+
+#btnLogar, #redirectCadastro {
+    background-color: #37C7F3;
+    box-shadow: 0 0 3px rgba(33,33,33,1);
+    border: 0;
+    border-radius: 3px;
+    outline: none;
+}
+
+#btnLogar:hover, #redirectCadastro:hover {
+    box-shadow: 0 0 7px rgba(33,33,33,1);
+    transition: all 0.15s linear;
+    background-color: #00abff;
+}
+
+/* CADASTRO */
+/*.cadastrar{*/
+    /*width: 330px;*/
+    /*height: auto;*/
+    /*background-color: white;*/
+    /*margin: 50px auto;*/
+    /*box-shadow: 2px 2px 1px darkgray;*/
+    /*display: block;*/
+/*}*/
+
