@@ -7,60 +7,76 @@
 
     <script>
 
-        // function fazerLogin() {
-        //     document.getElementById("cadastrar").style.display = "inline";
-        //     document.getElementById("login").style.display = "none";
-        // }
+        function redirect() {
+            console.log('foi');
+            document.getElementById("login").style.transform = "rotate3d(0, 1, 0, 90deg)";
+            setTimeout(function(){
+                document.getElementById("cadastrar").style.transform = "rotate3d(0, 1, 0, 0deg)";
+            }, 500)
+
+
+        }
+
+        function voltar() {
+
+            document.getElementById("cadastrar").style.transform = "rotate3d(0, 1, 0, 90deg)";
+            setTimeout(function(){
+                document.getElementById("login").style.transform = "rotate3d(0, 1, 0, 0deg)";
+            }, 500)
+            ;
+        }
 
     </script>
 
 </head>
 
-<body id="corpoPagina" style="overflow: hidden;">
+<body id="corpoPagina">
+<section>
+    <div class="login" id="login">
 
-<div class="login" id="login">
+        <div class="tituloLogin">
+            LOGIN
+            <span><i class="mdi mdi-movie mdi-48px"></i></span>
+        </div>
 
-    <div class="tituloLogin">
-        LOGIN
-        <span><i class="mdi mdi-movie mdi-48px"></i></span>
-    </div>
+        <div class="inputLogin" id="inputLogin">
+            <input type="text" name="username" id="username" placeholder="Username" maxlength="30">
+            <br><br>
+            <input type="password" name="password" id="password" placeholder="Password" maxlength="16">
+        </div>
 
-    <div class="inputLogin" id="inputLogin">
-        <input type="text" name="username" id="username" placeholder="Username" maxlength="30" >
-        <br><br>
-        <input type="password" name="password" id="password" placeholder="Password" maxlength="16">
-    </div>
-
-    <div class="botaoLogin">
-        <button type="button" id="btnLogar" onclick="fazerLogin()">LOGIN</button><br>
-        <button type="button" id="redirectCadastro" onclick="irCriarConta()">Create account?</button>
-    </div>
-
-</div>
-
-<div class="cadastrar" id="cadastrar">
-    <button type="button" id="btnVoltar">Back</button>
-    <div class="tituloCadastro">
-        NEW USER
-        <span><i class="mdi mdi-movie mdi-48px"></i></span>
-
+        <div class="botaoLogin">
+            <button type="button" id="btnLogar" onclick="fazerLogin()">LOGIN</button>
+            <br>
+            <button type="button" id="redirectCadastro" onclick="redirect()">Create account?</button>
+        </div>
 
     </div>
 
-    <div class="inputCadastro" id="inputCadastro">
-        <input type="text" name="username" id="usernameCad" placeholder="Username" maxlength="30" >
-        <br><br>
-        <input type="password" name="password" id="passwordCad" placeholder="Password" maxlength="16">
-        <br><br>
-        <input type="password" name="password" id="confirmPassword" placeholder="Password" maxlength="16">
+    <div class="cadastrar" id="cadastrar">
+        <div class="tituloCadastro">
+            NEW USER
+            <span><i class="mdi mdi-movie mdi-48px"></i></span>
+
+
+        </div>
+
+        <div class="inputCadastro" id="inputCadastro">
+            <input type="text" name="username" id="usernameCad" placeholder="Username" maxlength="30">
+            <br><br>
+            <input type="password" name="password" id="passwordCad" placeholder="Password" maxlength="16">
+            <br><br>
+            <input type="password" name="password" id="confirmPassword" placeholder="Password" maxlength="16">
+        </div>
+
+        <div class="botaoCadastro">
+            <button type="button" id="btnCadastrar" onclick="cadastrar()">SUBMIT</button>
+            <button type="button" id="btnVoltar" onclick="voltar()">Back</button>
+        </div>
+
+
     </div>
-
-    <div class="botaoCadastro">
-        <button type="button" id="btnCadastrar" onclick="cadastrar()">SUBMIT</button>
-    </div>
-
-
-</div>
+</section>
 
 <div id="snackbar" class="snackbar"></div>
 

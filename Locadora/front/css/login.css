@@ -5,21 +5,20 @@
 }
 
 body {
-    background-color: rgb(238, 238, 238);
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
 }
 
-/* LOGIN */
-.login, .cadastrar{
+section {
+    margin: 0 auto;
     width: 330px;
-    height: auto;
+}
+/* LOGIN */
+.login{
+    width: 330px;
+    min-height: 100px;
     background-color: white;
-    margin: 50px auto;
-    box-shadow: 2px 2px 1px darkgray;
-    display: block;
+    box-shadow: 2px 2px 1px darkgrey;
+    transition: all 0.45s linear;
+    position: absolute;
 }
 
 .tituloLogin, .tituloCadastro {
@@ -79,6 +78,15 @@ body {
 /* CADASTRO */
 
 
+.cadastrar {
+    width: 330px;
+    min-height: 100px;
+    background-color: white;
+    box-shadow: 2px 2px 1px darkgrey;
+    transition: all 0.45s linear;
+    transform: rotate3d(0, 1, 0, 90deg);
+}
+
 #btnCadastrar {
     margin-left: 140px;
     margin-top: 10px;
@@ -94,15 +102,4 @@ body {
     border-radius: 3px;
     outline: none;
     margin-left: 10px;
-    display: inline;
 }
-
-/*.cadastrar{*/
-    /*width: 330px;*/
-    /*height: auto;*/
-    /*background-color: white;*/
-    /*margin: 50px auto;*/
-    /*box-shadow: 2px 2px 1px darkgray;*/
-    /*display: block;*/
-/*}*/
-
