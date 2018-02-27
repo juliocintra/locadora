@@ -4,6 +4,16 @@
 <head>
     <title>Cinema</title>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+
+    <script>
+
+        // function fazerLogin() {
+        //     document.getElementById("cadastrar").style.display = "inline";
+        //     document.getElementById("login").style.display = "none";
+        // }
+
+    </script>
+
 </head>
 
 <body id="corpoPagina" style="overflow: hidden;">
@@ -23,15 +33,18 @@
 
     <div class="botaoLogin">
         <button type="button" id="btnLogar" onclick="fazerLogin()">LOGIN</button><br>
-        <button type="button" id="redirectCadastro" onclick="irCriarConta()">New here?</button>
+        <button type="button" id="redirectCadastro" onclick="irCriarConta()">Create account?</button>
     </div>
 
 </div>
 
 <div class="cadastrar" id="cadastrar">
+    <button type="button" id="btnVoltar">Back</button>
     <div class="tituloCadastro">
         NEW USER
         <span><i class="mdi mdi-movie mdi-48px"></i></span>
+
+
     </div>
 
     <div class="inputCadastro" id="inputCadastro">

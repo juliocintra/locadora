@@ -44,21 +44,59 @@ body {
     outline: none;
 }
 
-#btnLogar, #redirectCadastro {
+#btnLogar, #redirectCadastro, #btnCadastrar {
     background-color: #37C7F3;
     box-shadow: 0 0 3px rgba(33,33,33,1);
     border: 0;
     border-radius: 3px;
     outline: none;
+
 }
 
-#btnLogar:hover, #redirectCadastro:hover {
+#btnLogar, #btnCadastrar {
+    margin-left: 140px;
+    margin-top: 10px;
+    width:50px;
+    height:30px;
+}
+
+#redirectCadastro {
+    margin-left: 230px;
+
+}
+
+#btnLogar:hover, #redirectCadastro:hover , #btnCadastrar:hover, #btnVoltar:hover{
     box-shadow: 0 0 7px rgba(33,33,33,1);
     transition: all 0.15s linear;
     background-color: #00abff;
 }
 
+/*.cadastrar {*/
+    /*display: none;*/
+/*}*/
+
+
 /* CADASTRO */
+
+
+#btnCadastrar {
+    margin-left: 140px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width:50px;
+    height:30px;
+}
+
+#btnVoltar {
+    background-color: #37C7F3;
+    box-shadow: 0 0 3px rgba(33,33,33,1);
+    border: 0;
+    border-radius: 3px;
+    outline: none;
+    margin-left: 10px;
+    display: inline;
+}
+
 /*.cadastrar{*/
     /*width: 330px;*/
     /*height: auto;*/
