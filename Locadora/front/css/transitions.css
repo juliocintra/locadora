@@ -1,0 +1,28 @@
+#snackbar {
+    visibility: hidden;
+    min-width: 150px;
+    float: right;
+    background-color: #37C7F3;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    /*position: fixed;*/
+    /*z-index: 1;*/
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    /*animation-name: snack;*/
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/*@keyframes snack {*/
+    /*from {left: 200px;}*/
+    /*to {left: 0px; background-color: lightcoral;}*/
+/*}*/

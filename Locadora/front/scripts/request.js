@@ -1,5 +1,11 @@
-function ping() {
+function mostrarSnackbar(message) {
+    var snackBar = document.getElementById("snackbar");
+    snackBar.className = "show";
+    snackbar.innerHTML = message;
 
+    setTimeout(function(){
+        snackBar.className = snackBar.className.replace("show", "");
+        }, 3000);
 }
 
 function login() {
@@ -9,7 +15,7 @@ function login() {
     var params = JSON.stringify({"username": usuario,"password": senha});
 
     if (usuario == '' || senha == '')
-        alert('preencha todos os campos');
+        mostrarSnackbar('Preencha todos os campos!');
     else {
 
         var request = new XMLHttpRequest();
@@ -20,11 +26,13 @@ function login() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log('login efetuado com sucesso');
+                mostrarSnackbar('Login efetuado!');
             }
             else if(this.status == 400){
-                alert('dados invalidos');
-                // console.log(JSON.parse(this.responseText)[0]);
+                if (request.responseText) {
+                    var message = JSON.parse(request.responseText);
+                }
+                mostrarSnackbar(message);
             }
         }
     }
@@ -77,25 +85,36 @@ function cadastrar() {
     var senha = document.getElementById("passwordCad").value;
     var confirmaSenha = document.getElementById("confirmPassword").value;
 
-    if (senha != confirmaSenha) {
-        alert('senhas diferentes');
+    if (usuario == '' || senha == '' || confirmaSenha == '')
+        mostrarSnackbar('Preencha todos os campos');
+    else if (senha != confirmaSenha) {
+        mostrarSnackbar('As senhas informadas são diferentes');
+    }
+    else {
+
+        var params = JSON.stringify({"username": usuario,"password": senha});
+
+        var request = new XMLHttpRequest();
+
+        request.open("POST", "https://watchlater.azurewebsites.net/api/user");
+        request.setRequestHeader("Content-type", "application/json");
+        request.send(params);
+
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                mostrarSnackbar('Cadastro efetuado com sucesso!!');
+                setTimeout(function() {
+                    voltar();
+                }, 3000)
+
+            }
+            else if(this.status == 400){
+                if (request.responseText) {
+                    var message = JSON.parse(request.responseText);
+                }
+                mostrarSnackbar(message);
+            }
+        };
     }
 
-    var params = JSON.stringify({"username": usuario,"password": senha});
-
-    request.open("POST", "https://watchlater.azurewebsites.net/api/user");
-    request.setRequestHeader("Content-type", "application/json");
-    request.send(params);
-
-    request.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log('usuario cadastrado');
-        }
-        else if(this.status == 400){
-            alert('deu ruim');
-            // console.log(JSON.parse(this.responseText)[0]);
-        }
-    };
-
-    console.log(usuario + ' ' + senha + ' ' + confirmaSenha);
 }
