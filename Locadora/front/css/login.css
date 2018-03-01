@@ -54,15 +54,15 @@ section {
 }
 
 #btnLogar{
-    margin-left: 125px;
-    margin-top: 10px;
+    margin-right: 40px;
+    /* margin-top: 10px; */
     width: 90px;
     height: 30px;
 }
 
 #redirectCadastro {
-    margin-left: 250px;
-
+    width: 60px;
+    height: 30px;
 }
 
 #btnLogar:hover, #redirectCadastro:hover , #btnCadastrar:hover{
@@ -71,13 +71,15 @@ section {
     background-color: #00abff;
 }
 
-/*.cadastrar {*/
-    /*display: none;*/
-/*}*/
+.botaoLogin {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
 
 
 /* CADASTRO */
-
 
 .cadastrar {
     width: 330px;
@@ -102,7 +104,7 @@ section {
     border: 0;
     border-radius: 3px;
     outline: none;
-    margin-left: 80px;
+    margin-left: 65px;
 }
 
 .botaoCadastro > i{
