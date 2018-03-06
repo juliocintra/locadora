@@ -12,7 +12,6 @@ function mostrarSnackbar(message, status) {
     }, 1500);
 }
 
-
 function validaUser(btn) {
    console.log(btn.value);
    // var regex = /^[a-z0-9_-]/;
