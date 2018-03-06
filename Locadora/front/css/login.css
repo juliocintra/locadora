@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(238, 238, 238);
+    background-color: #E0E0E0;
 }
 
 section {
@@ -15,6 +15,7 @@ section {
 /* LOGIN */
 .login{
     width: 330px;
+    height: 200px;
     min-height: 100px;
     background-color: white;
     box-shadow: 2px 2px 1px darkgrey;
@@ -83,6 +84,7 @@ section {
 
 .cadastrar {
     width: 330px;
+    height: 230px;
     min-height: 100px;
     background-color: white;
     box-shadow: 2px 2px 1px darkgrey;
@@ -119,5 +121,4 @@ section {
     50%  {left:5px;}
     100% {left:0px; }
 }
-
 

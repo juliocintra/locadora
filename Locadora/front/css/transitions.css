@@ -2,7 +2,6 @@
     visibility: hidden;
     min-width: 150px;
     float: right;
-    background-color: #37C7F3;
     color: #fff;
     text-align: center;
     border-radius: 2px;
@@ -17,12 +16,13 @@
 
 #snackbar.show {
     visibility: visible;
-    /*animation-name: snack;*/
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+    animation-name: snack;
+    animation-duration: 1.5s;
+    border-radius: 5px;
+    /*animation-fill-mode: forwards;*/
 }
 
-/*@keyframes snack {*/
-    /*from {left: 200px;}*/
-    /*to {left: 0px; background-color: lightcoral;}*/
-/*}*/
+@keyframes snack {
+    from {right: 0;}
+    to {right: 100px;}
+}

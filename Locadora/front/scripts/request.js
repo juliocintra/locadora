@@ -1,13 +1,3 @@
-function mostrarSnackbar(message) {
-    var snackBar = document.getElementById("snackbar");
-    snackBar.className = "show";
-    snackBar.innerHTML = message;
-
-    setTimeout(function(){
-        snackBar.className = snackBar.className.replace("show", "");
-        }, 1500);
-}
-
 function login() {
     var usuario = document.getElementById("username").value;
     var senha = document.getElementById("password").value;
@@ -15,7 +5,7 @@ function login() {
     var params = JSON.stringify({"username": usuario,"password": senha});
 
     if (usuario == '' || senha == '') {
-        mostrarSnackbar('Preencha todos os campos!');
+        mostrarSnackbar('Preencha todos os campos!', false);
     }
     else {
 
@@ -27,13 +17,13 @@ function login() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                mostrarSnackbar('Login efetuado!');
+                mostrarSnackbar('Login efetuado!', true);
             }
             else if(this.status == 400){
                 if (request.responseText) {
                     var message = JSON.parse(request.responseText);
                 }
-                mostrarSnackbar(message);
+                mostrarSnackbar(message, false);
             }
         }
     }
@@ -45,10 +35,12 @@ function cadastrar() {
     var senha = document.getElementById("passwordCad").value;
     var confirmaSenha = document.getElementById("confirmPassword").value;
 
-    if (usuario == '' || senha == '' || confirmaSenha == '')
-        mostrarSnackbar('Preencha todos os campos');
-    else if (senha != confirmaSenha) {
-        mostrarSnackbar('As senhas informadas são diferentes');
+    if (usuario.length < 8 || usuario.length > 16)
+        mostrarSnackbar('Username must be 8 to 16 characters', false);
+    else if (usuario === '' || senha === '' || confirmaSenha === '')
+        mostrarSnackbar('Preencha todos os campos', false);
+    else if (senha !== confirmaSenha) {
+        mostrarSnackbar('Passwords are diferents!', false);
     }
     else {
 
@@ -62,16 +54,16 @@ function cadastrar() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                mostrarSnackbar('Cadastro efetuado com sucesso!!');
+                mostrarSnackbar('Cadastro efetuado com sucesso!!', true);
+                setTimeout(function() {
+                    voltar();
+                }, 1500)
             }
             else if(this.status == 400){
                 if (request.responseText) {
                     var message = JSON.parse(request.responseText);
                 }
-                mostrarSnackbar(message[0]);
-                setTimeout(function() {
-                    voltar();
-                }, 1500)
+                mostrarSnackbar(message[0], false);
             }
         };
     }
