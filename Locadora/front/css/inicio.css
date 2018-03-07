@@ -40,7 +40,9 @@
     position: relative;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
+    cursor: pointer;
 }
+
 .expandirMenu {
     width: 170px;
     -webkit-transition: all 0.15s linear;
@@ -68,11 +70,39 @@
     background-color: #00abff;
 }
 
-.listaFilmes{
+.listaFilmes {
     overflow: hidden;
     align-items: center;
 }
 
 .listaFilmes li {
     display: flex;
+    width: 170px;
+    padding: 10px;
+    border-bottom: 2px dotted gray;
+    /*border-bottom-width: thin;*/
 }
+
+/*.listaFilmes li:first-child {*/
+    /*margin-top: px;*/
+/*}*/
+
+.listaFilmes li:hover {
+    box-shadow: 0 0 7px rgba(33,33,33,1);
+    transition: all 0.15s linear;
+    background-color: #00abff;
+    cursor: pointer;
+    /*outline: none;*/
+}
+
+.listaFilmes li a {
+    margin-left: 20px;
+}
+
+/*.tema {*/
+    /*display: flex;*/
+    /*width: 170px;*/
+    /*padding: 10px;*/
+    /*border-bottom: 2px dotted gray;*/
+/*}*/
+
