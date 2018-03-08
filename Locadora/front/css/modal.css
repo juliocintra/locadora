@@ -1,142 +1,80 @@
-/*************************************/
-/************* CONTEUDO **************/
-/*************************************/
-.geral {
-    height: 100%;
+.dadosFilme input {
+    width: 235px;
 }
 
-.conteudo {
-    float: right;
-    width: 70%;
-    margin-right: 100px;
-    margin-top: 15px;
-    height: auto;
-    text-align: center;
+.modal {
+    width: 450px;
+    height: 500px;
+    border: 1px solid black;
 }
 
-.conteudo .poster-filme {
-    float: left;
+.infoFilme {
+    width: 400px;
+    height: 180px;
+    /*border: 1px solid black;*/
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.poster {
+    width: 100px;
+    height: 160px;
+    border: 1px solid black;
+    /* padding: 10px; */
     margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    height: 300px;
-    width: 200px;
-    border-radius: 5px;
-    background-position: center !important;
-    background-size: cover !important;
-    box-shadow: 3px 3px 3px gray;
+    position: absolute;
 }
 
-.conteudo .poster-filme .detalhes-filme {
-    background-color: rgba(0, 0, 0, 0.0);
-    height: 100%;
-    cursor: pointer;
-    border-radius: 5px;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+.dadosFilme {
+    padding: 20px 0 0 140px
 }
 
-.conteudo .poster-filme .detalhes-filme:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+.opniaoFilme {
+    width: 400px;
+    height: 180px;
+    /*border: 1px solid black;*/
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 22px;
 }
 
-.conteudo .poster-filme .detalhes-filme i {
-    opacity: 0.0;
-    cursor: pointer;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
+.watched #dataWatched {
+    margin-left: 50px;
 }
 
-.conteudo .poster-filme .detalhes-filme button {
-    opacity: 0.0;
-    width: 120px;
+.quality {
+    padding: 20px 0;
+}
+
+#description {
+    width: 400px;
+    height: 70px;
+}
+
+.adicionaFilme {
+    margin-top: 400px;
+    margin-left: 22px;
+    width: 400px;
+    height: 70px;
+    position: absolute;
+    border: 1px solid black;
+}
+
+.adicionaFilme #btnSalvar {
+    background-color: #37C7F3;
+    box-shadow: 0 0 3px rgba(33,33,33,1);
+    border: 0;
+    outline: none;
+    width: 90px;
     height: 30px;
-    border: 0px;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
-    border-radius: 3px;
-    background-color: rgb(0, 171, 255);
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.conteudo .poster-filme .detalhes-filme button:last-child {
-    margin-top: 10px;
-}
-
-.conteudo .poster-filme .detalhes-filme:hover i, .conteudo .poster-filme .detalhes-filme:hover button {
-    opacity: 1.0;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-/**************************/
-/******** BOTAO ADD *******/
-/**************************/
-.btnAdd {
-    width: 60px;
-    height: 50px;
-    background-color: lightblue;
-    float: right;
-    text-align: center;
-    padding-top: 10px;
-    border-radius: 50px;
-    bottom: 30px;
-    right: 30px;
-    box-shadow: 3px 3px 4px lightgray;
-    position: fixed;
-    cursor: pointer;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.btnAdd span {
-    color: black;
-    vertical-align: middle;
-}
-
-.btnAdd:hover {
-    width: 65px;
-    height: 55px;
     border-radius: 55px;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
-}
-
-.btnAddSmall {
-    background-color: lightblue;
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    margin: 0 auto;
     cursor: pointer;
-    box-shadow: 0px 0px 5px 3px gray;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
-    transition: all 0.15s linear;
 }
 
-.btnAddSmall:hover {
-    box-shadow: 0px 0px 5px 6px gray;
-    -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
-    -o-transition: all 0.15s linear;
+.adicionaFilme #btnSalvar:hover {
+    box-shadow: 0 0 7px rgba(33,33,33,1);
     transition: all 0.15s linear;
+    background-color: #00abff;
 }
+

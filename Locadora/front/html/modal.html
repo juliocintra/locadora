@@ -3,31 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
 </head>
 <body>
-<div id="openModal" class="modalDialog">
+
+<section>
     <div class="modal">
-        <a href="#close" title="Close" class="closeModal"></a>
         <form>
-            <div class="conteudoInicial">
-                <div class="tituloModal">
-                    <label>Adicionar Filme</label>
-                    <hr>
-                </div>
+            <div class="infoFilme">
+                <div class="poster"></div>
 
-                <div class="imgPoster" id="imgPoster"></div>
-
-                <div class="inputConteudoInicial">
-                    <input type="text" name="tituloFilme" id="tituloFilme" placeholder="Title" required><br><br>
-                    <input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required pattern="https?://.+" title="O link deve começar com https://" onchange="miniPoster(this.value)"><br><br>
-                    <input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required pattern="https?://www.youtube.+" title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
+                <div class="dadosFilme">
+                    <input type="text" name="tituloFilme" id="tituloFilme" placeholder="Name" required><br><br>
+                    <input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required
+                           pattern="https?://.+" title="O link deve começar com https://"
+                           onchange="miniPoster(this.value)"><br><br>
+                    <input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required
+                           pattern="https?://www.youtube.+"
+                           title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
                     <select id="categoriaModal" required>
+                        <option>Category</option>
+                        <option>Action</option>
+                        <option>Adventure</option>
+                        <option>Comedy</option>
+                        <option>Drama</option>
+                        <option>Educational</option>
+                        <option>Erotic</option>
+                        <option>Fiction</option>
+                        <option>War</option>
+                        <option>Kids</option>
+                        <option>Musicals</option>
+                        <option>Police</option>
+                        <option>Romance</option>
+                        <option>Thriller</option>
+                        <option>Terror</option>
                     </select>
                 </div>
             </div>
 
-            <div class="conteudoFinal">
+            <div class="opniaoFilme">
                 <div class="watched">
                     <label><b>Watched:</b></label>
                     <input type="radio" name="watched" id="watchedSim" value="true" required><span> Yes</span>
@@ -36,19 +51,25 @@
                 </div>
 
                 <div class="quality">
-                    <label><b>Quality:</b></label> <input type="text" id="display" value="5" readonly style="width: 18px; border: 0px;"><br>
-                    <input type="range" name="quality" id="quality" min="0" max="10" value="5" style="border: 0px;" oninput="display.value=value" onchange="display.value=value" required>
+                    <label><b>Quality:</b></label> <input type="text" id="display" value="5" readonly
+                                                          style="width: 18px; border: 0px;"><br>
+                    <input type="range" name="quality" id="quality" min="0" max="10" value="5" style="border: 0px;"
+                           oninput="display.value=value" onchange="display.value=value" required>
                 </div>
 
                 <div class="description">
                     <textarea id="description" placeholder="Description" required></textarea>
                 </div>
             </div>
-            <form>
-                <div class="btns">
-                    <button type="submit" onclick="salvarFilme()" id="btnSalvar">Save <i class="mdi mdi-content-save"></i></button>
-                </div>
+
+            <div class="adicionaFilme">
+                <button type="submit" onclick="salvarFilme()" id="btnSalvar">Save
+                    <i class="material-icons">done</i></button>
+            </div>
+
+        </form>
     </div>
-</div>
+</section>
+
 </body>
 </html>
