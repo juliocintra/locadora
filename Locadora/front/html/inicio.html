@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
+    <script type="text/javascript" src="../scripts/modal.js"></script>
 </head>
 <body>
 
@@ -21,24 +22,29 @@
     <div class="geral" id="geral">
 
         <div class="menu" id="menu" onclick="transitionMenu()">
+
+            <div class="barraMenu"></div>
+            <!--<div class="barraMenu"></div>-->
+            <!--<div class="barraMenu"></div>-->
+
         </div>
 
         <nav class="longBarVertical" id="longBarVertical">
             <ul class="listaFilmes">
-                <li> <i class="material-icons">movie_filter</i> <a>Action</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Adventure</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Comedy</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Drama</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Educational</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Erotic</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Fiction</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>War</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Kids</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Musicals</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Police</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Romance</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Thriller</a></li>
-                <li> <i class="material-icons">movie_filter</i> <a>Terror</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Action</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Adventure</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Comedy</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Drama</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Educational</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Erotic</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Fiction</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>War</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Kids</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Musicals</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Police</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Romance</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Thriller</a></li>
+                <li><i class="material-icons">movie_filter</i> <a>Terror</a></li>
             </ul>
         </nav>
 
@@ -48,8 +54,76 @@
 
     </div>
 
+    <div class="divModal">
+
+        <section>
+            <div class="modal" id="modal">
+                <form>
+                    <div class="infoFilme">
+                        <div class="poster"><i class="material-icons">photo</i></div>
+
+                        <div class="dadosFilme">
+                            <input type="text" name="tituloFilme" id="tituloFilme" placeholder="Name" required><br><br>
+                            <input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required
+                                   pattern="https?://.+" title="O link deve começar com https://"
+                                   onchange="miniPoster(this.value)"><br><br>
+                            <input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required
+                                   pattern="https?://www.youtube.+"
+                                   title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
+                            <select id="categoriaModal" required>
+                                <option>Category</option>
+                                <option>Action</option>
+                                <option>Adventure</option>
+                                <option>Comedy</option>
+                                <option>Drama</option>
+                                <option>Educational</option>
+                                <option>Erotic</option>
+                                <option>Fiction</option>
+                                <option>War</option>
+                                <option>Kids</option>
+                                <option>Musicals</option>
+                                <option>Police</option>
+                                <option>Romance</option>
+                                <option>Thriller</option>
+                                <option>Terror</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="opniaoFilme">
+                        <div class="watched">
+                            <label><b>Watched:</b></label>
+                            <input type="radio" name="watched" id="watchedSim" value="true" required><span> Yes</span>
+                            <input type="radio" name="watched" id="watchedNao" value="false" required><span> No</span>
+                            <input type="date" name="dataWatched" id="dataWatched" placeholder="Watched Date">
+                        </div>
+
+                        <div class="quality">
+                            <label><b>Quality:</b></label> <input type="text" id="display" value="5" readonly
+                                                                  style="width: 18px; border: 0px;"><br>
+                            <input type="range" name="quality" id="quality" min="0" max="10" value="5"
+                                   style="border: 0px;"
+                                   oninput="display.value=value" onchange="display.value=value" required>
+                        </div>
+
+                        <div class="description">
+                            <textarea id="description" placeholder="Description" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="adicionaFilme">
+                        <button type="submit" onclick="salvarFilme()" id="btnSalvar"><i class="material-icons">done</i></button>
+                        <button type="submit" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </div>
+
     <!-- BOTAO MODAL -->
-    <div class="btnAdd" id="btnAdd" onclick="location='#openModal';listarCategoriaModal()">
+    <div class="btnAdd" id="btnAdd" onclick="adicionarFilme()">
         <span><i class="mdi mdi-plus mdi-36px"></i></span>
     </div>
 </section>

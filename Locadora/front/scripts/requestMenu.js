@@ -1,3 +1,3 @@
-function menu() {
-    console.log('FOI');
+function categoria() {
+
 }

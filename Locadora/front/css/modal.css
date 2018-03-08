@@ -6,6 +6,16 @@
     width: 450px;
     height: 500px;
     border: 1px solid black;
+    box-shadow: 2px 2px 2px gray;
+    /*opacity: 0;*/
+    display: none;
+}
+
+.modalOpen {
+    width: 450px;
+    height: 500px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px gray;
 }
 
 .infoFilme {
@@ -24,6 +34,11 @@
     /* padding: 10px; */
     margin-top: 10px;
     position: absolute;
+}
+
+.poster i {
+    margin-left: 40px;
+    margin-top: 70px;
 }
 
 .dadosFilme {
@@ -58,7 +73,7 @@
     width: 400px;
     height: 70px;
     position: absolute;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .adicionaFilme #btnSalvar {
@@ -70,6 +85,9 @@
     height: 30px;
     border-radius: 55px;
     cursor: pointer;
+    margin-left: 300px;
+    margin-top: 20px;
+    position: absolute;
 }
 
 .adicionaFilme #btnSalvar:hover {
@@ -77,4 +95,24 @@
     transition: all 0.15s linear;
     background-color: #00abff;
 }
+
+.adicionaFilme #btnDeletar {
+    background-color: lightcoral;
+    box-shadow: 0 0 3px rgba(33,33,33,1);
+    border: 0;
+    outline: none;
+    width: 90px;
+    height: 30px;
+    border-radius: 55px;
+    cursor: pointer;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.adicionaFilme #btnDeletar:hover {
+    box-shadow: 0 0 7px rgba(33,33,33,1);
+    transition: all 0.15s linear;
+    background-color: #ea4b4b;
+}
+
 

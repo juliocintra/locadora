@@ -159,6 +159,16 @@
     transition: all 0.15s linear;
 }
 
+.divModal {
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 10%;
+    /*margin-top: 100px;*/
+    /*background-color: lightgray;*/
+}
+
 /*.tema {*/
     /*display: flex;*/
     /*width: 170px;*/
