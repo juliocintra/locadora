@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
     <script type="text/javascript" src="../scripts/modal.js"></script>
+    <script type="text/javascript" src="../scripts/requestMenu.js"></script>
 </head>
 <body>
 
@@ -23,9 +24,11 @@
 
         <div class="menu" id="menu" onclick="transitionMenu()">
 
-            <div class="barraMenu"></div>
-            <!--<div class="barraMenu"></div>-->
-            <!--<div class="barraMenu"></div>-->
+            <div class="divBarraMenu">
+                <div class="barraMenu" id="barra1"></div>
+                <div class="barraMenu" id="barra2"></div>
+                <div class="barraMenu" id="barra3"></div>
+            </div>
 
         </div>
 
@@ -71,21 +74,7 @@
                                    pattern="https?://www.youtube.+"
                                    title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
                             <select id="categoriaModal" required>
-                                <option>Category</option>
-                                <option>Action</option>
-                                <option>Adventure</option>
-                                <option>Comedy</option>
-                                <option>Drama</option>
-                                <option>Educational</option>
-                                <option>Erotic</option>
-                                <option>Fiction</option>
-                                <option>War</option>
-                                <option>Kids</option>
-                                <option>Musicals</option>
-                                <option>Police</option>
-                                <option>Romance</option>
-                                <option>Thriller</option>
-                                <option>Terror</option>
+                                <!-- aqui fica o dropdown -->
                             </select>
                         </div>
                     </div>
@@ -112,7 +101,7 @@
                     </div>
 
                     <div class="adicionaFilme">
-                        <button type="submit" onclick="salvarFilme()" id="btnSalvar"><i class="material-icons">done</i></button>
+                        <button type="submit" id="btnSalvar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
                         <button type="submit" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
                     </div>
 

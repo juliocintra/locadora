@@ -67,5 +67,4 @@ function cadastrar() {
             }
         };
     }
-
 }

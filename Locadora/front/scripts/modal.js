@@ -1,7 +1,8 @@
 function adicionarFilme() {
-    // document.getElementById("modal").style.display = 'inline';
     document.getElementById("modal").classList.remove("modal");
     document.getElementById("modal").classList.add("modalOpen");
+
+    listarCategoriaDropDown();
 }
 
 function fecharModal() {
