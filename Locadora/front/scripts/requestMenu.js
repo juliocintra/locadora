@@ -1,3 +1,36 @@
+function validate(params) {
+    var error = [];
+
+    if (params.idUser === "")
+        error.push("Peencha todos os campos");
+
+    if (params.idCategory === "")
+        error.push("Peencha todos os campos");
+
+    if (params.name === "")
+        error.push("Peencha todos os campos");
+
+    if (params.urlPoster === "")
+        error.push("Peencha todos os campos");
+
+    if (params.urlTrailler === "")
+        error.push("Peencha todos os campos");
+
+    if (params.watched === "")
+        error.push("Peencha todos os campos");
+
+    if (params.watchedDate === "")
+        error.push("Peencha todos os campos");
+
+    if (params.quality === "")
+        error.push("Peencha todos os campos");
+
+    if (params.description === "")
+        error.push("Peencha todos os campos");
+
+    return error[0];
+}
+
 function listarCategoriaDropDown() {
     var request = new XMLHttpRequest();
 
@@ -34,22 +67,24 @@ function inserirFilme() {
         quality: document.getElementById("quality").value,
         description: document.getElementById("description").value
     };
+    console.log(params);
+    var data = validate(params);
 
+    if (data.length)
+        mostrarSnackbar(data, false);
+    else {
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://watchlater.azurewebsites.net/api/user/"+params.idUser+"/movie", true);
+        request.setRequestHeader("Content-type", "application/json");
+        request.send(params);
 
-    var request = new XMLHttpRequest();
-    request.open("POST", "https://watchlater.azurewebsites.net/api/user/"+params.idUser+"/movie", true);
-    request.setRequestHeader("Content-type", "application/json");
-    request.send(JSON.stringify(params));
-
-    request.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log('foi');
-            console.log(request.responseText);
-            mostrarSnackbar('Filme cadastrado com sucesso', true);
-        } else {
-            console.log('nao foi');
-            mostrarSnackbar('Deu ruim', false);
+        request.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(request.responseText);
+                mostrarSnackbar('Filme cadastrado com sucesso', true);
+            } else if (this.status === 400){
+                mostrarSnackbar('Deu ruim', false);
+            }
         }
     }
-
 }

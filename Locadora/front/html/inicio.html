@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../css/inicio.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../css/transitions.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
     <script type="text/javascript" src="../scripts/modal.js"></script>
     <script type="text/javascript" src="../scripts/requestMenu.js"></script>
+    <script type="text/javascript" src="../scripts/events.js"></script>
 </head>
 <body>
 
@@ -63,13 +65,13 @@
             <div class="modal" id="modal">
                 <form>
                     <div class="infoFilme">
-                        <div class="poster"><i class="material-icons">photo</i></div>
+                        <div class="poster" id="poster"><i class="material-icons">photo</i></div>
 
                         <div class="dadosFilme">
                             <input type="text" name="tituloFilme" id="tituloFilme" placeholder="Name" required><br><br>
                             <input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required
                                    pattern="https?://.+" title="O link deve começar com https://"
-                                   onchange="miniPoster(this.value)"><br><br>
+                                   onchange="miniPosterEditar(this.value)"><br><br>
                             <input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required
                                    pattern="https?://www.youtube.+"
                                    title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
@@ -115,6 +117,8 @@
     <div class="btnAdd" id="btnAdd" onclick="adicionarFilme()">
         <span><i class="mdi mdi-plus mdi-36px"></i></span>
     </div>
+
+    <div id="snackbar" class="snackbar"></div>
 </section>
 
 

@@ -41,3 +41,9 @@ function transitionMenu() {
         document.getElementById("longBarVertical").classList.add("longBarVertical");
     }
 }
+
+function miniPosterEditar(urlPoster) {
+    document.getElementById("poster").style.backgroundImage = "url('"+urlPoster+"')";
+    // document.getElementById("poster").style.backgroundColor = 'red';
+
+}
