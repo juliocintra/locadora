@@ -17,7 +17,11 @@ function login() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                localStorage.setItem("idUser", JSON.parse(request.responseText));
                 mostrarSnackbar('Login efetuado!', true);
+                setTimeout(function() {
+                    location.href = "inicio.html";
+                }, 1500);
             }
             else if(this.status == 400){
                 if (request.responseText) {
