@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <link rel="stylesheet" type="text/css" href="../css/transitions.css">
+    <link rel="stylesheet" type="text/css" href="../css/poster.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
     <script type="text/javascript" src="../scripts/modal.js"></script>
     <script type="text/javascript" src="../scripts/requestMenu.js"></script>
@@ -20,9 +21,10 @@
         <div class="titulo">
             <span onclick="listarFilmes()" style="cursor: pointer;"><b>WATCH LATER</b>
                 <i class="material-icons">theaters</i>
+            </span>
         </div>
     </div>
-    <div class="geral" id="geral">
+    <div class="divVertical" id="divVertical">
 
         <div class="menu" id="menu" onclick="transitionMenu()">
 
@@ -34,7 +36,7 @@
 
         </div>
 
-        <nav class="longBarVertical" id="longBarVertical">
+        <!--<nav class="divCategorias" id="divCategorias">-->
             <ul class="listaFilmes" id="listaFilmes">
                 <li id="32cc3c9b-54c1-45c1-ab85-fa34d069c9ab" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Action</a></li>
                 <li id="ae5665f3-eb15-4ca3-984a-9a806c460c1c" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Adventure</a></li>
@@ -51,74 +53,82 @@
                 <li id="15b30e17-6955-4504-b33b-1ecca7a8a5ea" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Thriller</a></li>
                 <li id="11167c2e-b49d-484a-84aa-fe6696c5e196" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Terror</a></li>
             </ul>
-        </nav>
+        <!--</nav>-->
 
-        <div class="tema" id="tema" onclick="mudarTema()"></div>
+        <!--<div class="tema" id="tema" onclick="mudarTema()"></div>-->
 
-        <div class="deslogar" id="deslogar" onclick="deslogar()"></div>
+        <!--<div class="deslogar" id="deslogar" onclick="deslogar()"></div>-->
+    </div>
+
+
+    <div class="filmes" id="filmes">
+
+        <div class="teste"></div>
+        <div class="teste"></div>
+        <div class="teste"></div>
 
     </div>
 
-    <div class="divModal">
+    <!--<div class="divModal">-->
 
-        <section>
-            <div class="modal" id="modal">
-                <form>
-                    <div class="infoFilme">
-                        <div class="poster" id="poster"><i class="material-icons">photo</i></div>
+        <!--<section>-->
+            <!--<div class="modal" id="modal">-->
+                <!--<form>-->
+                    <!--<div class="infoFilme">-->
+                        <!--<div class="poster" id="poster"><i class="material-icons">photo</i></div>-->
 
-                        <div class="dadosFilme">
-                            <input type="text" name="tituloFilme" id="tituloFilme" placeholder="Name" required><br><br>
-                            <input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required
-                                   pattern="https?://.+" title="O link deve começar com https://"
-                                   onchange="miniPosterEditar(this.value)"><br><br>
-                            <input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required
-                                   pattern="https?://www.youtube.+"
-                                   title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
-                            <select id="categoriaModal" required>
-                                <!-- aqui fica o dropdown -->
-                            </select>
-                        </div>
-                    </div>
+                        <!--<div class="dadosFilme">-->
+                            <!--<input type="text" name="tituloFilme" id="tituloFilme" placeholder="Name" required><br><br>-->
+                            <!--<input type="text" name="urlPoster" id="urlPoster" placeholder="Poster URL" required-->
+                                   <!--pattern="https?://.+" title="O link deve começar com https://"-->
+                                   <!--onchange="miniPosterEditar(this.value)"><br><br>-->
+                            <!--<input type="text" name="urlTrailler" id="urlTrailler" placeholder="Trailler URL" required-->
+                                   <!--pattern="https?://www.youtube.+"-->
+                                   <!--title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>-->
+                            <!--<select id="categoriaModal" required>-->
+                                <!--&lt;!&ndash; aqui fica o dropdown &ndash;&gt;-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="opniaoFilme">
-                        <div class="watched">
-                            <label><b>Watched:</b></label>
-                            <input type="radio" name="watched" id="watchedSim" value="true" required><span> Yes</span>
-                            <input type="radio" name="watched" id="watchedNao" value="false" required><span> No</span>
-                            <input type="date" name="dataWatched" id="dataWatched" placeholder="Watched Date">
-                        </div>
+                    <!--<div class="opniaoFilme">-->
+                        <!--<div class="watched">-->
+                            <!--<label><b>Watched:</b></label>-->
+                            <!--<input type="radio" name="watched" id="watchedSim" value="true" required><span> Yes</span>-->
+                            <!--<input type="radio" name="watched" id="watchedNao" value="false" required><span> No</span>-->
+                            <!--<input type="date" name="dataWatched" id="dataWatched" placeholder="Watched Date">-->
+                        <!--</div>-->
 
-                        <div class="quality">
-                            <label><b>Quality:</b></label> <input type="text" id="display" value="5" readonly
-                                                                  style="width: 18px; border: 0px;"><br>
-                            <input type="range" name="quality" id="quality" min="0" max="10" value="5"
-                                   style="border: 0px;"
-                                   oninput="display.value=value" onchange="display.value=value" required>
-                        </div>
+                        <!--<div class="quality">-->
+                            <!--<label><b>Quality:</b></label> <input type="text" id="display" value="5" readonly-->
+                                                                  <!--style="width: 18px; border: 0px;"><br>-->
+                            <!--<input type="range" name="quality" id="quality" min="0" max="10" value="5"-->
+                                   <!--style="border: 0px;"-->
+                                   <!--oninput="display.value=value" onchange="display.value=value" required>-->
+                        <!--</div>-->
 
-                        <div class="description">
-                            <textarea id="description" placeholder="Description" required></textarea>
-                        </div>
-                    </div>
+                        <!--<div class="description">-->
+                            <!--<textarea id="description" placeholder="Description" required></textarea>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="adicionaFilme">
-                        <button type="button" id="btnSalvar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
-                        <button type="button" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
-                    </div>
+                    <!--<div class="adicionaFilme">-->
+                        <!--<button type="button" id="btnSalvar" onclick="inserirFilme()"><i class="material-icons">done</i></button>-->
+                        <!--<button type="button" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>-->
+                    <!--</div>-->
 
-                </form>
-            </div>
-        </section>
+                <!--</form>-->
+            <!--</div>-->
+        <!--</section>-->
 
-    </div>
+    <!--</div>-->
 
-    <!-- BOTAO MODAL -->
-    <div class="btnAdd" id="btnAdd" onclick="adicionarFilme()">
-        <i class="material-icons">add</i>
-    </div>
+    <!--&lt;!&ndash; BOTAO MODAL &ndash;&gt;-->
+    <!--<div class="btnAdd" id="btnAdd" onclick="adicionarFilme()">-->
+        <!--<i class="material-icons">add</i>-->
+    <!--</div>-->
 
-    <div id="snackbar" class="snackbar"></div>
+    <!--<div id="snackbar" class="snackbar"></div>-->
 </section>
 
 

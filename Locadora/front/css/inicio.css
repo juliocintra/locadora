@@ -2,13 +2,15 @@
     width: 100%;
     height: 60px;
     background-color: #37C7F3;
-    position: absolute;
-    /*border-bottom: 1px solid gray;*/
+    position: fixed;
+    border-bottom: 1px solid gray;
     box-shadow: 2px 2px 2px gray;
+    display: flex;
+    justify-content: center;
 }
 
 .longBarHorizontal .titulo {
-    text-align: center;
+    position: absolute;
 }
 
 .longBarHorizontal .titulo span {
@@ -18,40 +20,35 @@
     line-height: 60px;
 }
 
-.longBarVertical {
-    width: 50px;
+.divCategorias {
+    width: 170px;
     height: calc(100% - 60px);
     background-color: rgb(221, 221, 221);
     border-right: 1px solid gray;
     box-shadow: 2px 2px 2px gray;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
-    position: absolute;
-}
-
-.listaFilmes {
-    margin-top: 20px;
+    position: fixed;
 }
 
 .menu {
     width: 50px;
     height: 60px;
-    background-color: #37C7F3;
-    position: relative;
+    position: absolute;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
     cursor: pointer;
-    border-right: 1px solid gray;
-    box-shadow: 2px 2px 2px gray;
 }
 
 .expandirMenu {
     width: 170px;
+    height: 60px;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
-    height: 60px;
     background-color: #37C7F3;
     position: relative;
+    border-right: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
 }
 
 .expandirLongBarVertical {
@@ -62,19 +59,36 @@
     box-shadow: 2px 2px 2px gray;
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
-    position: absolute;
+    position: relative;
 }
 
-.geral {
+.divVertical {
     width: 50px;
     height: 100%;
     position: fixed;
-    background-color: #00abff;
+    /*background-color: #00abff;*/
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    border-right: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.expandirDivVertical {
+    width: 170px;
+    height: 100%;
+    position: fixed;
+    /*background-color: #00abff;*/
+    border-right: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
 }
 
 .listaFilmes {
     overflow: hidden;
     align-items: center;
+    margin-top: 60px;
+    background-color: rgb(221, 221, 221);
 }
 
 .listaFilmes li {
@@ -150,7 +164,7 @@
     transition: all 0.15s linear;
 }
 
-.btnAddSmall:hover {
+.btnAddSmall    :hover {
     box-shadow: 0px 0px 5px 6px gray;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;

@@ -24,21 +24,26 @@ function myOnblur(item) {
 
 function transitionMenu() {
 
-    var menu = document.getElementById("menu").className;
+    var menu = document.getElementById("divVertical").className;
 
-    if (menu === 'menu') {
-        document.getElementById("menu").classList.remove("menu");
-        document.getElementById("menu").classList.add("expandirMenu");
-
-        document.getElementById("longBarVertical").classList.remove("longBarVertical");
-        document.getElementById("longBarVertical").classList.add("expandirLongBarVertical");
+    if (menu === 'divVertical') {
+        document.getElementById("divVertical").classList.remove("divVertical");
+        document.getElementById("divVertical").classList.add("expandirDivVertical");
+        // document.getElementById("menu").classList.remove("menu");
+        // document.getElementById("menu").classList.add("expandirMenu");
+        //
+        // document.getElementById("longBarVertical").classList.remove("longBarVertical");
+        // document.getElementById("longBarVertical").classList.add("expandirLongBarVertical");
     }
     else {
-        document.getElementById("menu").classList.remove("expandirMenu");
-        document.getElementById("menu").classList.add("menu");
+        document.getElementById("divVertical").classList.remove("expandirDivVertical");
+        document.getElementById("divVertical").classList.add("divVertical");
 
-        document.getElementById("longBarVertical").classList.remove("expandirLongBarVertical");
-        document.getElementById("longBarVertical").classList.add("longBarVertical");
+        // document.getElementById("menu").classList.remove("expandirMenu");
+        // document.getElementById("menu").classList.add("menu");
+        //
+        // document.getElementById("longBarVertical").classList.remove("expandirLongBarVertical");
+        // document.getElementById("longBarVertical").classList.add("longBarVertical");
     }
 }
 

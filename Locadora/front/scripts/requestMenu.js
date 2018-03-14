@@ -90,7 +90,7 @@ function listarFilmes() {
             var lista = JSON.parse(request.responseText);
 
             lista.forEach(function (item) {
-                console.log(item.idCategory);
+
             })
 
         } else if (this.status === 400){
@@ -192,4 +192,10 @@ function alterarFilme(id) {
             }
         }
     }
+}
+
+function excluirFilme(id) {
+    idUser = localStorage.getItem("idUser");
+    var request = new XMLHttpRequest();
+    request.open("DELETE", "https://watchlater.azurewebsites.net/api/user/"+idUser+"/movie/"+id+", true")
 }

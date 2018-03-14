@@ -1,0 +1,22 @@
+.filmes {
+    border: 1px solid black;
+    /*transition: all 0.3s;*/
+    padding: 100px;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap
+}
+
+.teste {
+    /*opacity: 0;*/
+    position: absolute;
+    min-width: 200px;
+    min-height: 300px;
+    cursor: pointer;
+    /*transition: all 0.3s;*/
+    text-align: center;
+    color: #fff;
+    z-index: 1000;
+    border: 1px solid black;
+    display: flex;
+}
