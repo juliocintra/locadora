@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <link rel="stylesheet" type="text/css" href="../css/transitions.css">
     <link rel="stylesheet" type="text/css" href="../css/poster.css">
+    <link rel="stylesheet" type="text/css" href="../css/materialIcons.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
     <script type="text/javascript" src="../scripts/modal.js"></script>
     <script type="text/javascript" src="../scripts/requestMenu.js"></script>
@@ -27,33 +29,29 @@
     <div class="divVertical" id="divVertical">
 
         <div class="menu" id="menu" onclick="transitionMenu()">
-
-            <!--<div class="divBarraMenu">-->
-                <div class="barra1" id="barra1"></div>
-                <div class="barra2" id="barra2"></div>
-                <div class="barra3" id="barra3"></div>
-            <!--</div>-->
-
+            <div class="barra1" id="barra1"></div>
+            <div class="barra2" id="barra2"></div>
+            <div class="barra3" id="barra3"></div>
         </div>
 
         <!--<nav class="divCategorias" id="divCategorias">-->
             <ul class="listaFilmes" id="listaFilmes">
-                <li id="32cc3c9b-54c1-45c1-ab85-fa34d069c9ab" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Action</a></li>
-                <li id="ae5665f3-eb15-4ca3-984a-9a806c460c1c" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Adventure</a></li>
-                <li id="7ecb8603-5b50-4ae3-97fe-6289ccc201ae" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Comedy</a></li>
-                <li id="fbf209d2-6bbb-49ac-86c4-09194a0653e2" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Drama</a></li>
-                <li id="3a086b37-5653-4773-b51c-cd7444182c54" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Educational</a></li>
-                <li id="570d1ba6-ebba-404b-a0c9-6109e73ccb45" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Erotic</a></li>
-                <li id="c6fb412e-4d9d-4510-b858-e46dfbf88c1c" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Fiction</a></li>
-                <li id="4cfef98f-aab1-427f-809d-91a183868b5a" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>War</a></li>
-                <li id="25bb3c1f-87ae-40c0-9152-0aae8d9b2dd9" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Kids</a></li>
-                <li id="c2ba2a13-8116-408f-8f52-b1dd0ff8f537" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Musicals</a></li>
-                <li id="8f2b1273-7840-4aeb-b254-835b26859ec0" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Police</a></li>
-                <li id="83896b4a-b2a8-4c72-afbd-68bb4c21ce94" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Romance</a></li>
-                <li id="15b30e17-6955-4504-b33b-1ecca7a8a5ea" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Thriller</a></li>
-                <li id="11167c2e-b49d-484a-84aa-fe6696c5e196" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons">movie_filter</i> <a>Terror</a></li>
-                <li><i class="material-icons">wb_incandescent</i></li>
-                <li><i class="material-icons">cancel</i></li>
+                <li id="32cc3c9b-54c1-45c1-ab85-fa34d069c9ab" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Action</a></li>
+                <li id="ae5665f3-eb15-4ca3-984a-9a806c460c1c" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Adventure</a></li>
+                <li id="7ecb8603-5b50-4ae3-97fe-6289ccc201ae" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Comedy</a></li>
+                <li id="fbf209d2-6bbb-49ac-86c4-09194a0653e2" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Drama</a></li>
+                <li id="3a086b37-5653-4773-b51c-cd7444182c54" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Educational</a></li>
+                <li id="570d1ba6-ebba-404b-a0c9-6109e73ccb45" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Erotic</a></li>
+                <li id="c6fb412e-4d9d-4510-b858-e46dfbf88c1c" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Fiction</a></li>
+                <li id="4cfef98f-aab1-427f-809d-91a183868b5a" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>War</a></li>
+                <li id="25bb3c1f-87ae-40c0-9152-0aae8d9b2dd9" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Kids</a></li>
+                <li id="c2ba2a13-8116-408f-8f52-b1dd0ff8f537" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Musicals</a></li>
+                <li id="8f2b1273-7840-4aeb-b254-835b26859ec0" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Police</a></li>
+                <li id="83896b4a-b2a8-4c72-afbd-68bb4c21ce94" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Romance</a></li>
+                <li id="15b30e17-6955-4504-b33b-1ecca7a8a5ea" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Thriller</a></li>
+                <li id="11167c2e-b49d-484a-84aa-fe6696c5e196" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Terror</a></li>
+                <li><i class="material-icons">wb_incandescent</i><a>Dark Theme</a></li>
+                <li><i class="material-icons logout">cancel</i><a>Logout</a></li>
             </ul>
         <!--</nav>-->
 

@@ -78,6 +78,7 @@
     background-color: black;
     transition: transform 0.2s linear;
     transform: scale(0);
+    border-radius: 2px;
 }
 
 .rotateBarra3 {
