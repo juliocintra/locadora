@@ -26,3 +26,68 @@
     from {right: 0;}
     to {right: 100px;}
 }
+
+#barra1 {
+    width: 25px;
+    height: 3px;
+    top: 18px;
+    position: absolute;
+    background-color: black;
+    left: 10px;
+    transition: transform 0.2s linear;
+}
+
+.barra2 {
+    width: 25px;
+    height: 3px;
+    top: 25px;
+    position: absolute;
+    background-color: black;
+    left: 10px;
+    transition: transform 0.2s linear;
+}
+
+.barra3 {
+    width: 25px;
+    height: 3px;
+    top: 32px;
+    position: absolute;
+    background-color: black;
+    left: 10px;
+    transition: transform 0.2s linear;
+}
+
+.rotateBarra1 {
+    width: 25px;
+    height: 3px;
+    top: 25px;
+    position: absolute;
+    background-color: black;
+    left: 10px;
+    transform: translate(0px, 7.3px) rotate(45deg);
+    transition: transform 0.2s linear;
+    border-radius: 2px;
+}
+
+.hiddenBarra2 {
+    width: 25px;
+    height: 3px;
+    top: 25px;
+    left: 10px;
+    position: absolute;
+    background-color: black;
+    transition: transform 0.2s linear;
+    transform: scale(0);
+}
+
+.rotateBarra3 {
+    width: 25px;
+    height: 3px;
+    top: 32px;
+    position: absolute;
+    background-color: black;
+    left: 10px;
+    transform: translate(0px, -7.3px) rotate(-45deg);
+    transition: transform 0.2s linear;
+    border-radius: 2px;
+}

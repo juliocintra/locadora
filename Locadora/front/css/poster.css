@@ -1,10 +1,12 @@
 .filmes {
     border: 1px solid black;
     /*transition: all 0.3s;*/
-    padding: 100px;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap
+    float: right;
+    width: 70%;
+    margin-right: 100px;
+    margin-top: 15px;
+    height: auto;
+    text-align: center;
 }
 
 .teste {
