@@ -7,8 +7,9 @@
     height: 500px;
     border: 1px solid black;
     box-shadow: 2px 2px 2px gray;
-    /*opacity: 0;*/
+    opacity: 0;
     display: none;
+    /*transition: all 4s linear;*/
 }
 
 .modalOpen {
@@ -17,6 +18,7 @@
     border: 1px solid black;
     box-shadow: 2px 2px 2px gray;
     background-color: white;
+    /*transition: all 4s linear;*/
 }
 
 .infoFilme {
@@ -128,9 +130,10 @@
     background-color: gray;
     position: absolute;
     opacity: 0.4;
-    z-index: 2;
+    /*z-index: 2;*/
     display: none;
 }
+
 
 /*.divBarraMenu {*/
     /*width: 30px;*/
