@@ -8,4 +8,6 @@ function adicionarFilme() {
 function fecharModal() {
     document.getElementById("modal").classList.remove("modalOpen");
     document.getElementById("modal").classList.add("modal");
+
+    console.log('teste');
 }

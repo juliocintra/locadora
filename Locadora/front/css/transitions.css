@@ -19,6 +19,7 @@
     animation-name: snack;
     animation-duration: 1.5s;
     border-radius: 5px;
+    font-family: "Comic Sans MS";
     /*animation-fill-mode: forwards;*/
 }
 
