@@ -67,7 +67,7 @@
     </div>
 
     <!-- MODAL PARA INSERIR -->
-    <div class="divModal">
+    <div class="divModal" id="divModal">
 
         <section>
             <div class="modal" id="modal" onblur="fecharModal()">
@@ -113,7 +113,7 @@
 
                     <div class="adicionaFilme">
                         <button type="button" id="btnSalvar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
-                        <button type="button" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
+                        <!--<button type="button" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>-->
                     </div>
 
                 </form>
@@ -122,7 +122,7 @@
     </div>
 
     <!-- MODAL DE EDIÇAO -->
-    <div class="divModal">
+    <div class="divModal" id="divModalEditar">
 
         <section>
             <div class="modalEditar" id="modalEditar" onblur="fecharModal()">
@@ -167,8 +167,8 @@
                     </div>
 
                     <div class="adicionaFilme">
-                        <button type="button" id="btnSalvarEditar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
-                        <button type="button" id="btnDeletarEditar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
+                        <button type="button" id="btnSalvarEditar" onclick="alterarFilme(this.value)"><i class="material-icons">done</i></button>
+                        <button type="button" id="btnDeletarEditar" onclick="excluirFilme(this.value)"><i class="material-icons">delete</i></button>
                     </div>
 
                 </form>

@@ -8,10 +8,10 @@
     padding: 16px;
     /*position: fixed;*/
     /*z-index: 1;*/
-    position: absolute;
     right: 30px;
     top: 20px;
     font-size: 17px;
+    position: fixed;
 }
 
 #snackbar.show {
@@ -20,6 +20,7 @@
     animation-duration: 1.5s;
     border-radius: 5px;
     font-family: "Comic Sans MS";
+    z-index: 5000;
     /*animation-fill-mode: forwards;*/
 }
 

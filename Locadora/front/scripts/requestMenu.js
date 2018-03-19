@@ -16,17 +16,17 @@ function validate(params) {
     if (params.urlTrailler === "")
         error.push("Peencha todos os campos");
 
-    if (params.watched === "")
-        error.push("Peencha todos os campos");
-
-    if (params.watchedDate === "")
-        error.push("Peencha todos os campos");
-
-    if (params.quality === "")
-        error.push("Peencha todos os campos");
-
-    if (params.description === "")
-        error.push("Peencha todos os campos");
+    // if (params.watched === "")
+    //     error.push("Peencha todos os campos");
+    //
+    // if (params.watchedDate === "")
+    //     error.push("Peencha todos os campos");
+    //
+    // if (params.quality === "")
+    //     error.push("Peencha todos os campos");
+    //
+    // if (params.description === "")
+    //     error.push("Peencha todos os campos");
 
     if (error[0] === undefined)
         error[0] = 0;
@@ -34,7 +34,7 @@ function validate(params) {
     return error[0];
 }
 
-function listarCategoriaDropDown() {
+function listarCategoriaDropDown(idCategory) {
     var request = new XMLHttpRequest();
 
     request.open("GET", "https://watchlater.azurewebsites.net/api/category");
@@ -45,11 +45,24 @@ function listarCategoriaDropDown() {
         if (this.readyState === 4 && this.status === 200) {
             var lista = JSON.parse(request.responseText);
             var category = '';
-            lista.forEach(function (item) {
-                category = category + '<option value="'+item.id+'">'+item.name+'</option>';
-            });
 
-            document.getElementById("categoriaModal").innerHTML = category;
+            if (idCategory === null) {
+                lista.forEach(function (item) {
+                    category = category + '<option value="'+item.id+'">'+item.name+'</option>';
+                });
+                document.getElementById("categoriaModal").innerHTML = category;
+            }
+            else {
+                lista.forEach(function(item) {
+                    if (item.id === idCategory) {
+                        category = category + '<option selected="selected" value="'+item.id+'">'+item.name+'</option>';
+                    }
+                    else {
+                        category = category + '<option value="'+item.id+'">'+item.name+'</option>';
+                    }
+                });
+                document.getElementById("categoriaModalEditar").innerHTML = category;
+            }
         }
         else {
             console.log('deu ruim');
@@ -146,8 +159,7 @@ function listarFilmePorId(id) {
 
             lista.forEach(function(item) {
                 if (item.id == id) {
-                    document.getElementById('tituloFilmeEditar').value = item.name;
-                    exibirDetalhes();
+                    exibirDetalhes(item);
                 }
                 else {
                     console.log('nao foi');
@@ -192,16 +204,17 @@ function inserirFilme() {
 }
 
 function alterarFilme(id) {
+
     var params = {
         idUser: localStorage.getItem("idUser"),
-        idCategory: document.getElementById("categoriaModal").options[document.getElementById("categoriaModal").selectedIndex].value,
-        name: document.getElementById("tituloFilme").value,
-        urlPoster: document.getElementById("urlPoster").value,
-        urlTrailler: document.getElementById("urlTrailler").value,
-        watched: document.getElementById("watchedSim").checked ? true : false,
-        watchedDate: document.getElementById("dataWatched").value,
-        quality: document.getElementById("quality").value,
-        description: document.getElementById("description").value
+        idCategory: document.getElementById("categoriaModalEditar").options[document.getElementById("categoriaModalEditar").selectedIndex].value,
+        name: document.getElementById("tituloFilmeEditar").value,
+        urlPoster: document.getElementById("urlPosterEditar").value,
+        urlTrailler: document.getElementById("urlTraillerEditar").value,
+        watched: document.getElementById("watchedSimEditar").checked ? true : false,
+        watchedDate: document.getElementById("dataWatchedEditar").value,
+        quality: document.getElementById("qualityEditar").value,
+        description: document.getElementById("descriptionEditar").value
     };
 
     var data = validate(params);
@@ -210,7 +223,7 @@ function alterarFilme(id) {
         mostrarSnackbar(data, false);
     else {
         var request = new XMLHttpRequest();
-        request.open("PUT", "https://watchlater.azurewebsites.net/api/user/"+params.idUser+"/movie/"+id+", true");
+        request.open("PUT", "https://watchlater.azurewebsites.net/api/user/"+params.idUser+"/movie/"+id+"", true);
         request.setRequestHeader("Content-type", "application/json");
         request.send(JSON.stringify(params));
 
@@ -226,9 +239,19 @@ function alterarFilme(id) {
 }
 
 function excluirFilme(id) {
-    idUser = localStorage.getItem("idUser");
+    var idUser = localStorage.getItem("idUser");
     var request = new XMLHttpRequest();
-    request.open("DELETE", "https://watchlater.azurewebsites.net/api/user/"+idUser+"/movie/"+id+", true")
+    request.open("DELETE", "https://watchlater.azurewebsites.net/api/user/"+idUser+"/movie/"+id+"", true);
+    request.send();
+
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(request.responseText);
+            mostrarSnackbar('Filme excluído com sucesso', true);
+        } else if (this.status === 400){
+            mostrarSnackbar('Deu ruim', false);
+        }
+    }
 }
 
 function deslogar() {
