@@ -89,10 +89,19 @@ function listarFilmes() {
         if (this.readyState == 4 && this.status == 200) {
             var lista = JSON.parse(request.responseText);
 
-            lista.forEach(function (item) {
+            if (lista.length) {
+                var divFilme = "";
 
-            })
-
+                // lista.forEach(function (item) {
+                    divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+lista[0].urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\">play_circle_outline</i><button class=\"info\"></button></div></div>";
+                // divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+lista[0].urlPoster+"); background-size: 210px;\"></div>";
+                // })
+                console.log(divFilme);
+                document.getElementById("filmes").innerHTML = divFilme;
+            }
+            else {
+                console.log('nao há dados para exibir');
+            }
         } else if (this.status === 400){
             console.log('deu ruim')
 
@@ -198,4 +207,11 @@ function excluirFilme(id) {
     idUser = localStorage.getItem("idUser");
     var request = new XMLHttpRequest();
     request.open("DELETE", "https://watchlater.azurewebsites.net/api/user/"+idUser+"/movie/"+id+", true")
+}
+
+function deslogar() {
+    window.localStorage.removeItem("idUser");
+    setTimeout(function() {
+        location.href = "login.html";
+    }, 1500)
 }

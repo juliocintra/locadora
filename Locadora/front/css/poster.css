@@ -1,15 +1,16 @@
 .filmes {
     border: 1px solid black;
-    /*transition: all 0.3s;*/
-    float: right;
-    width: 70%;
-    margin-right: 100px;
-    margin-top: 15px;
-    height: auto;
+    /* transition: all 0.3s; */
+    /* float: right; */
+    width: 85%;
+    margin-left: 200px;
+    margin-top: 90px;
+    height: 100%;
     text-align: center;
+    position: absolute;
 }
 
-.teste {
+.conteudoFilme {
     /*opacity: 0;*/
     position: absolute;
     min-width: 200px;
@@ -21,4 +22,31 @@
     z-index: 1000;
     border: 1px solid black;
     display: flex;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.detalhes {
+    opacity: 0;
+    width: 200px;
+    min-height: 300px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.15s linear;
+}
+
+/*hover*/
+.detalhes {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    width: 200px;
+    min-height: 300px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.15s linear;
+}
+
+.detalhes i {
+    font-size: 120px;
+    padding: 50px;
 }

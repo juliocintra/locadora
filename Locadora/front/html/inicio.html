@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../scripts/requestMenu.js"></script>
     <script type="text/javascript" src="../scripts/events.js"></script>
 </head>
-<body>
+<body onload="listarFilmes()">
 
 <section class="container">
     <div class="longBarHorizontal" id="longBarHorizontal">
@@ -51,7 +51,7 @@
                 <li id="15b30e17-6955-4504-b33b-1ecca7a8a5ea" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Thriller</a></li>
                 <li id="11167c2e-b49d-484a-84aa-fe6696c5e196" onclick="listarFilmesPorCategoria(this.id)"><i class="material-icons iconMovie">movie_filter</i> <a>Terror</a></li>
                 <li><i class="material-icons">wb_incandescent</i><a>Dark Theme</a></li>
-                <li><i class="material-icons logout">cancel</i><a>Logout</a></li>
+                <li onclick="deslogar()"><i class="material-icons logout">cancel</i><a>Logout</a></li>
             </ul>
         <!--</nav>-->
 
@@ -62,10 +62,6 @@
 
 
     <div class="filmes" id="filmes">
-
-        <!--<div class="teste"></div>-->
-        <!--<div class="teste"></div>-->
-        <!--<div class="teste"></div>-->
 
     </div>
 
