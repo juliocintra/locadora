@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/inicio.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../css/modalEditar.css">
     <link rel="stylesheet" type="text/css" href="../css/transitions.css">
     <link rel="stylesheet" type="text/css" href="../css/poster.css">
     <link rel="stylesheet" type="text/css" href="../css/materialIcons.css">
@@ -65,6 +66,7 @@
 
     </div>
 
+    <!-- MODAL PARA INSERIR -->
     <div class="divModal">
 
         <section>
@@ -112,6 +114,61 @@
                     <div class="adicionaFilme">
                         <button type="button" id="btnSalvar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
                         <button type="button" id="btnDeletar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL DE EDIÇAO -->
+    <div class="divModal">
+
+        <section>
+            <div class="modalEditar" id="modalEditar" onblur="fecharModal()">
+                <i class="material-icons fecharModal" onclick="fecharModal()">close</i>
+                <form>
+                    <div class="infoFilme">
+                        <div class="poster" id="posterEditar"><i class="material-icons">photo</i></div>
+
+                        <div class="dadosFilme">
+                            <input type="text" name="tituloFilme" id="tituloFilmeEditar" placeholder="Name" required><br><br>
+                            <input type="text" name="urlPoster" id="urlPosterEditar" placeholder="Poster URL" required
+                                   pattern="https?://.+" title="O link deve começar com https://"
+                                   onchange="miniPosterEditar(this.value)"><br><br>
+                            <input type="text" name="urlTrailler" id="urlTraillerEditar" placeholder="Trailler URL" required
+                                   pattern="https?://www.youtube.+"
+                                   title="O trailler deve ser um video do Youtube (https://www.youtube)"><br><br>
+                            <select id="categoriaModalEditar" required>
+                                <!-- aqui fica o dropdown -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="opniaoFilme">
+                        <div class="watched">
+                            <label><b>Watched:</b></label>
+                            <input type="radio" name="watched" id="watchedSimEditar" value="true" required><span> Yes</span>
+                            <input type="radio" name="watched" id="watchedNaoEditar" value="false" required><span> No</span>
+                            <input type="date" name="dataWatched" id="dataWatchedEditar" placeholder="Watched Date">
+                        </div>
+
+                        <div class="quality">
+                            <label><b>Quality:</b></label> <input type="text" id="displayEditar" value="5" readonly
+                                                                  style="width: 18px; border: 0px;"><br>
+                            <input type="range" name="quality" id="qualityEditar" min="0" max="10" value="5"
+                                   style="border: 0px;"
+                                   oninput="display.value=value" onchange="display.value=value" required>
+                        </div>
+
+                        <div class="description">
+                            <textarea id="descriptionEditar" placeholder="Description" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="adicionaFilme">
+                        <button type="button" id="btnSalvarEditar" onclick="inserirFilme()"><i class="material-icons">done</i></button>
+                        <button type="button" id="btnDeletarEditar" onclick="fecharModal()"><i class="material-icons">delete</i></button>
                     </div>
 
                 </form>

@@ -13,3 +13,10 @@ function fecharModal() {
 
     document.getElementById("fundo").style.display = "none";
 }
+
+function exibirDetalhes() {
+    document.getElementById("modalEditar").classList.remove("modalEditar");
+    document.getElementById("modalEditar").classList.add("modalOpenEditar");
+
+    document.getElementById("fundo").style.display = "block";
+}
