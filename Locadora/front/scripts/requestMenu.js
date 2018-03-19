@@ -95,7 +95,7 @@ function listarFilmes() {
                 lista.forEach(function (item) {
                     divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button class=\"trailer\">Trailer</button></div></div>";
                 // divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+lista[0].urlPoster+"); background-size: 210px;\"></div>";
-                })
+                });
                 document.getElementById("filmes").innerHTML = divFilme;
             }
             else {
@@ -117,11 +117,16 @@ function listarFilmesPorCategoria(id) {
         if (this.readyState == 4 && this.status == 200) {
             var lista = JSON.parse(request.responseText);
 
-            lista.forEach(function(item) {
-                if (item.idCategory === id) {
-                    console.log(item.idCategory);
-                }
-            })
+            if (lista.length) {
+                var divFilme = "";
+
+                lista.forEach(function(item) {
+                    if (item.idCategory === id) {
+                        divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button class=\"trailer\">Trailer</button></div></div>";
+                    }
+                });
+                document.getElementById("filmes").innerHTML = divFilme;
+            }
 
         } else if (this.status === 400){
             console.log('deu ruim')
@@ -141,7 +146,8 @@ function listarFilmePorId(id) {
 
             lista.forEach(function(item) {
                 if (item.id == id) {
-                    console.log('foi');
+                    document.getElementById('tituloFilmeEditar').value = item.name;
+                    exibirDetalhes();
                 }
                 else {
                     console.log('nao foi');

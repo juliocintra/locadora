@@ -7,6 +7,7 @@
     box-shadow: 2px 2px 2px gray;
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 
 .longBarHorizontal .titulo {
@@ -72,6 +73,7 @@
     transition: all 0.15s linear;
     border-right: 1px solid gray;
     box-shadow: 2px 2px 2px gray;
+    z-index: 1001
 }
 
 .expandirDivVertical {
@@ -82,6 +84,7 @@
     border-right: 1px solid gray;
     box-shadow: 2px 2px 2px gray;
     transition: all 0.15s linear;
+    z-index: 1001
 }
 
 .listaFilmes {
@@ -133,6 +136,7 @@
     cursor: pointer;
     box-shadow: 1px 1px 3px rgba(33,33,33,1);
     transition: all 0.45s linear;
+    z-index: 2000;
 }
 
 .btnAdd span {
@@ -178,7 +182,7 @@
     position: absolute;
     margin-left: 35%;
     margin-top: 10%;
-    z-index: 3;
+    z-index: 3000;
     /*margin-top: 100px;*/
     /*background-color: lightgray;*/
 }
