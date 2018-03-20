@@ -10,8 +10,10 @@
     <link rel="stylesheet" type="text/css" href="../css/modalEditar.css">
     <link rel="stylesheet" type="text/css" href="../css/transitions.css">
     <link rel="stylesheet" type="text/css" href="../css/poster.css">
+    <link rel="stylesheet" type="text/css" href="../css/noMovies.css">
     <link rel="stylesheet" type="text/css" href="../css/materialIcons.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/modalTrailler.css">
     <script type="text/javascript" src="../scripts/layout.js"></script>
     <script type="text/javascript" src="../scripts/modal.js"></script>
     <script type="text/javascript" src="../scripts/requestMenu.js"></script>
@@ -178,6 +180,18 @@
 
     <div class="fundo" id="fundo" onclick="fecharModal()"></div>
 
+    <!-- Sem filmes -->
+    <div class="noMovies" id="noMovies">
+
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+        <br>
+        No movies found. Try add one!
+    </div>
+
+    <!-- MODAL TRAILER -->
+    <div class="modalTrailler" id="modalTrailler">
+        <iframe id="urlTraillerModal" width="900" height="600"></iframe>
+    </div>
     <!-- BOTAO MODAL -->
     <div class="btnAdd" id="btnAdd" onclick="adicionarFilme()">
         <i class="material-icons add">add</i>

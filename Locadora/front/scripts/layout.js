@@ -71,5 +71,5 @@ function transitionMenu() {
 
 function miniPosterEditar(urlPoster) {
     document.getElementById("poster").style.backgroundImage = "url('"+urlPoster+"')";
-    // document.getElementById("poster").style.backgroundColor = 'red';
+    document.getElementById("posterEditar").style.backgroundImage = "url('"+urlPoster+"')";
 }

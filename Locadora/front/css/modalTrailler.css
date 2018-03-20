@@ -1,0 +1,16 @@
+.modalTrailler {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 10%;
+    display: none;
+    border: 1px solid black;
+    font-size: 35px;
+    color: #555;
+    font-family: "Comic Sans MS";
+    text-align: center;
+    background: white;
+    z-index: 5000;
+    /* z-index: 1; */
+}

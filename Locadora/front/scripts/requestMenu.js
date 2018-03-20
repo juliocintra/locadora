@@ -70,29 +70,6 @@ function listarCategoriaDropDown(idCategory) {
     }
 }
 
-// window.onload = function() {
-//     var request = new XMLHttpRequest();
-//
-//     request.open("GET", "https://watchlater.azurewebsites.net/api/category");
-//     request.setRequestHeader("Content-type", "application/json");
-//     request.send();
-//
-//     request.onreadystatechange = function() {
-//         if (this.readyState === 4 && this.status === 200) {
-//             var lista = JSON.parse(request.responseText);
-//             var category = '';
-//             lista.forEach(function (item) {
-//                 category = category + '<option value="'+item.id+'">'+item.name+'</option>';
-//             });
-//             console.log(category);
-//             document.getElementById("listaFilmes").innerHTML = category;
-//         }
-//         else {
-//             console.log('Deu ruim');
-//         }
-//     }
-// };
-
 function listarFilmes() {
     var request = new XMLHttpRequest();
     request.open("GET", "https://watchlater.azurewebsites.net/api/user/"+localStorage.getItem("idUser")+"/movie");
@@ -106,13 +83,15 @@ function listarFilmes() {
                 var divFilme = "";
 
                 lista.forEach(function (item) {
-                    divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button class=\"trailer\">Trailer</button></div></div>";
-                // divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+lista[0].urlPoster+"); background-size: 210px;\"></div>";
+                    divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
                 });
+
+                document.getElementById("noMovies").style.display = "none";
                 document.getElementById("filmes").innerHTML = divFilme;
             }
             else {
-                console.log('nao há dados para exibir');
+                document.getElementById("filmes").innerHTML = "";
+                document.getElementById("noMovies").style.display = "block";
             }
         } else if (this.status === 400){
             console.log('deu ruim')
@@ -135,15 +114,21 @@ function listarFilmesPorCategoria(id) {
 
                 lista.forEach(function(item) {
                     if (item.idCategory === id) {
-                        divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button class=\"trailer\">Trailer</button></div></div>";
+                        divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
                     }
                 });
-                document.getElementById("filmes").innerHTML = divFilme;
-            }
 
+                if (divFilme) {
+                    document.getElementById("noMovies").style.display = "none";
+                    document.getElementById("filmes").innerHTML = divFilme;
+                }
+                else {
+                    document.getElementById("filmes").innerHTML = "";
+                    document.getElementById("noMovies").style.display = "block";
+                }
+            }
         } else if (this.status === 400){
             console.log('deu ruim')
-
         }
     }
 }
@@ -194,7 +179,8 @@ function inserirFilme() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(request.responseText);
+                fecharModal();
+                listarFilmes();
                 mostrarSnackbar('Filme cadastrado com sucesso', true);
             } else if (this.status === 400){
                 mostrarSnackbar('Deu ruim', false);
@@ -229,7 +215,8 @@ function alterarFilme(id) {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                console.log(request.responseText);
+                fecharModal();
+                listarFilmes();
                 mostrarSnackbar('Filme atualizado com sucesso', true);
             } else if (this.status === 400){
                 mostrarSnackbar('Deu ruim', false);
@@ -246,10 +233,35 @@ function excluirFilme(id) {
 
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(request.responseText);
+            fecharModal();
+            listarFilmes();
             mostrarSnackbar('Filme excluído com sucesso', true);
         } else if (this.status === 400){
             mostrarSnackbar('Deu ruim', false);
+        }
+    }
+}
+
+function trailler(id) {
+    var request = new XMLHttpRequest();
+    request.open("GET", "https://watchlater.azurewebsites.net/api/user/"+localStorage.getItem("idUser")+"/movie", true);
+    request.send();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            var lista = JSON.parse(request.responseText);
+            console.log(lista);
+            console.log(id);
+            lista.forEach(function(item) {
+                if (item.id == id) {
+                    var urlTrailler = 'https://www.youtube.com/embed/' + item.urlTrailler.substring(32);
+                    document.getElementById("urlTraillerModal").src = urlTrailler;
+                    openModalTrailler();
+                }
+            });
+        }
+        else {
+            console.log('deu ruim: trailler' );
         }
     }
 }

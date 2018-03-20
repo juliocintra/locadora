@@ -14,6 +14,7 @@ function fecharModal() {
     document.getElementById("modalEditar").classList.remove("modalOpenEditar");
     document.getElementById("modalEditar").classList.add("modalEditar");
 
+    document.getElementById("modalTrailler").style.display = "none";
     document.getElementById("divModal").style.display = "none";
     document.getElementById("divModalEditar").style.display = "none";
     document.getElementById("fundo").style.display = "none";
@@ -25,8 +26,8 @@ function exibirDetalhes(filme) {
     document.getElementById('urlPosterEditar').value = filme.urlPoster;
     document.getElementById("posterEditar").style.backgroundImage = "url('"+filme.urlPoster+"')";
     document.getElementById('urlTraillerEditar').value = filme.urlTrailler;
-    document.getElementById('displayEditar').value = filme.quality;
-    document.getElementById('qualityEditar').value = filme.quality;
+    // document.getElementById('displayEditar').value = filme.quality;
+    // document.getElementById('qualityEditar').value = filme.quality;
     document.getElementById('descriptionEditar').value = filme.description;
     // document.getElementById('categoriaModalEditar'); categoria
     if (filme.watched)
@@ -47,3 +48,9 @@ function exibirDetalhes(filme) {
     document.getElementById("divModalEditar").style.display = "block";
     document.getElementById("fundo").style.display = "block";
 }
+
+function openModalTrailler() {
+    document.getElementById("modalTrailler").style.display = "block";
+    document.getElementById("fundo").style.display = "block";
+}
+
