@@ -5,7 +5,7 @@ function mostrarSnackbar(message, status) {
     if (status)
         snackBar.style.backgroundColor = '#09B548';
     else
-        snackBar.style.backgroundColor = 'lightcoral';
+        snackBar.style.backgroundColor = '#ea4b4b';
     setTimeout(function(){
         snackBar.className = snackBar.className.replace("show", "");
 

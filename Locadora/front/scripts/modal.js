@@ -29,7 +29,7 @@ function exibirDetalhes(filme) {
     // document.getElementById('displayEditar').value = filme.quality;
     // document.getElementById('qualityEditar').value = filme.quality;
     document.getElementById('descriptionEditar').value = filme.description;
-    // document.getElementById('categoriaModalEditar'); categoria
+
     if (filme.watched)
         document.getElementById('watchedSimEditar').checked = true;
     else

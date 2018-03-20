@@ -166,7 +166,7 @@ function inserirFilme() {
         quality: document.getElementById("quality").value,
         description: document.getElementById("description").value
     };
-    console.log(params);
+
     var data = validate(params);
 
     if (data.length !== undefined)
