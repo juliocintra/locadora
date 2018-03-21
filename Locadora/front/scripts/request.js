@@ -5,7 +5,7 @@ function login() {
     var params = JSON.stringify({"username": usuario,"password": senha});
 
     if (usuario == '' || senha == '') {
-        mostrarSnackbar('Preencha todos os campos!', false);
+        mostrarSnackbar('Inform de username and password', false);
     }
     else {
 
