@@ -93,3 +93,11 @@
     transition: transform 0.2s linear;
     border-radius: 2px;
 }
+
+.bodyDark {
+    background-color: #2b2b2b ;
+}
+
+.listaFilmesDark {
+    background-color: #2b2b2b ;
+}
