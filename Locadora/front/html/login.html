@@ -24,11 +24,13 @@
             <input type="text" name="username" id="username" placeholder="Username" maxlength="30" onkeydown="validaUser(this)" onfocus="myOnfocus(this)" onblur="myOnblur(this)">
             <br><br>
             <input type="password" name="password" id="password" placeholder="Password" maxlength="16" onfocus="myOnfocus(this)" onblur="myOnblur(this)">
+            <br>
+            <a href="javascript:void(0)" class="new-user" id="redirectCadastro" onclick="redirect();">New here?</a>
         </div>
 
         <div class="botaoLogin">
             <button type="button" id="btnLogar" onclick="login()">LOGIN</button>
-            <a href="javascript:void(0)" class="new-user" id="redirectCadastro" onclick="redirect();">New here?</a>
+            <!--<a href="javascript:void(0)" class="new-user" id="redirectCadastro" onclick="redirect();">New here?</a>-->
             <!--<button type="button" id="redirectCadastro" onclick="redirect()">New here?</button>-->
         </div>
 

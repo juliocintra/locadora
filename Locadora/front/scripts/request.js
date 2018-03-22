@@ -18,7 +18,6 @@ function login() {
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 localStorage.setItem("idUser", JSON.parse(request.responseText));
-                mostrarSnackbar('Success', true);
                 setTimeout(function() {
                     location.href = "inicio.html";
                 }, 1500);
@@ -58,7 +57,7 @@ function cadastrar() {
 
         request.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                mostrarSnackbar('Cadastro efetuado com sucesso!!', true);
+                mostrarSnackbar('Success', true);
                 setTimeout(function() {
                     voltar();
                 }, 1500)

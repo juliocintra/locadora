@@ -19,7 +19,7 @@ section {
     min-height: 100px;
     background-color: white;
     box-shadow: 2px 2px 1px darkgrey;
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
     position: absolute;
     top: 250px
 }
@@ -56,13 +56,17 @@ section {
 }
 
 #btnLogar{
-    margin-right: 40px;
+    margin-right: 95px;
+    margin-top: 10px;
     width: 90px;
     height: 30px;
 }
 
 #redirectCadastro {
-    font-size: 13px;
+    font-size: 11px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 30px;
 }
 
 #btnLogar:hover, #btnCadastrar:hover{
@@ -87,7 +91,7 @@ section {
     min-height: 100px;
     background-color: white;
     box-shadow: 2px 2px 1px darkgrey;
-    transition: all 0.45s linear;
+    transition: all 0.35s linear;
     transform: rotate3d(0, 1, 0, 90deg);
     position: absolute;
     top: 250px

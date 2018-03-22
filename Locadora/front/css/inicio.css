@@ -197,3 +197,10 @@
     /*border-bottom: 2px dotted gray;*/
 /*}*/
 
+.closeTrailler {
+    /*position: absolute;*/
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}

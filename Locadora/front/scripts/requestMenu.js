@@ -181,7 +181,7 @@ function inserirFilme() {
             if (this.readyState == 4 && this.status == 200) {
                 fecharModal();
                 listarFilmes();
-                mostrarSnackbar('Filme cadastrado com sucesso', true);
+                mostrarSnackbar('Success', true);
             } else if (this.status === 400){
                 mostrarSnackbar('Deu ruim', false);
             }
@@ -217,7 +217,7 @@ function alterarFilme(id) {
             if (this.readyState == 4 && this.status == 200) {
                 fecharModal();
                 listarFilmes();
-                mostrarSnackbar('Filme atualizado com sucesso', true);
+                mostrarSnackbar('Success', true);
             } else if (this.status === 400){
                 mostrarSnackbar('Deu ruim', false);
             }
@@ -235,7 +235,7 @@ function excluirFilme(id) {
         if (this.readyState == 4 && this.status == 200) {
             fecharModal();
             listarFilmes();
-            mostrarSnackbar('Filme excluído com sucesso', true);
+            mostrarSnackbar('Success', true);
         } else if (this.status === 400){
             mostrarSnackbar('Deu ruim', false);
         }
