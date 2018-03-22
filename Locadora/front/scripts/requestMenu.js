@@ -2,19 +2,19 @@ function validate(params) {
     var error = [];
 
     if (params.idUser === "")
-        error.push("Peencha todos os campos");
+        error.push("Fill in the fields");
 
     if (params.idCategory === "")
-        error.push("Peencha todos os campos");
+        error.push("Fill in the fields");
 
     if (params.name === "")
-        error.push("Peencha todos os campos");
+        error.push("Fill in the fields");
 
     if (params.urlPoster === "")
-        error.push("Peencha todos os campos");
+        error.push("Fill in the fields");
 
     if (params.urlTrailler === "")
-        error.push("Peencha todos os campos");
+        error.push("Fill in the fields");
 
     // if (params.watched === "")
     //     error.push("Peencha todos os campos");
@@ -83,7 +83,7 @@ function listarFilmes() {
                 var divFilme = "";
 
                 lista.forEach(function (item) {
-                    divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
+                    divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Details</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
                 });
 
                 document.getElementById("noMovies").style.display = "none";
@@ -114,7 +114,7 @@ function listarFilmesPorCategoria(id) {
 
                 lista.forEach(function(item) {
                     if (item.idCategory === id) {
-                        divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Detalhes</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
+                        divFilme = divFilme + "<div name=\"filmes\" class=\"conteudoFilme\" style=\"background: url("+item.urlPoster+"); background-size: 210px;\"><div class=\"detalhes\"><i class=\"material-icons\" id="+item.id+" onclick=\"trailler(this.id)\">play_circle_outline</i><button id="+item.id+"  class=\"info\" onclick=\"listarFilmePorId(this.id)\">Details</button><button id="+item.id+" class=\"trailer\" onclick=\"trailler(this.id)\">Trailer</button></div></div>";
                     }
                 });
 

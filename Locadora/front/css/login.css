@@ -46,7 +46,7 @@ section {
     outline: none;
 }
 
-#btnLogar, #redirectCadastro, #btnCadastrar {
+#btnLogar, #btnCadastrar {
     background-color: #37C7F3;
     box-shadow: 0 0 3px rgba(33,33,33,1);
     border: 0;
@@ -62,11 +62,10 @@ section {
 }
 
 #redirectCadastro {
-    width: 60px;
-    height: 30px;
+    font-size: 13px;
 }
 
-#btnLogar:hover, #redirectCadastro:hover , #btnCadastrar:hover{
+#btnLogar:hover, #btnCadastrar:hover{
     box-shadow: 0 0 7px rgba(33,33,33,1);
     transition: all 0.15s linear;
     background-color: #00abff;
@@ -106,11 +105,15 @@ section {
     border: 0;
     border-radius: 3px;
     outline: none;
-    margin-left: 65px;
+    /*margin-left: 65px;*/
     cursor: pointer;
+    position: absolute;
+    margin-left: 15px;
+
 }
 
-.botaoCadastro > i{
+
+.tituloCadastro > i{
     position: relative;
     animation-name: move;
     animation-duration: 0.5s;

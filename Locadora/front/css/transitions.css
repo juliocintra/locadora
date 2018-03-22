@@ -18,7 +18,7 @@
     animation-name: snack;
     animation-duration: 1.5s;
     border-radius: 5px;
-    font-family: "Comic Sans MS";
+    font-family: 'Roboto', sans-serif;
     z-index: 5000;
     /*animation-fill-mode: forwards;*/
 }
@@ -33,7 +33,7 @@
     height: 3px;
     top: 18px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     left: 10px;
     transition: transform 0.2s linear;
 }
@@ -43,7 +43,7 @@
     height: 3px;
     top: 25px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     left: 10px;
     transition: transform 0.2s linear;
 }
@@ -53,7 +53,7 @@
     height: 3px;
     top: 32px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     left: 10px;
     transition: transform 0.2s linear;
 }
@@ -63,7 +63,7 @@
     height: 3px;
     top: 25px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     left: 10px;
     transform: translate(0px, 7.3px) rotate(45deg);
     transition: transform 0.2s linear;
@@ -76,7 +76,7 @@
     top: 25px;
     left: 10px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     transition: transform 0.2s linear;
     transform: scale(0);
     border-radius: 2px;
@@ -87,7 +87,7 @@
     height: 3px;
     top: 32px;
     position: absolute;
-    background-color: black;
+    background-color: white;
     left: 10px;
     transform: translate(0px, -7.3px) rotate(-45deg);
     transition: transform 0.2s linear;

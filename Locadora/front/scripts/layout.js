@@ -39,13 +39,6 @@ function transitionMenu() {
         document.getElementById("barra2").classList.remove("barra2");
         document.getElementById("barra2").classList.add("hiddenBarra2");
 
-        // document.getElementById("barra2").style.transform = "rotate(-45deg)"
-
-        // document.getElementById("menu").classList.remove("menu");
-        // document.getElementById("menu").classList.add("expandirMenu");
-        //
-        // document.getElementById("longBarVertical").classList.remove("longBarVertical");
-        // document.getElementById("longBarVertical").classList.add("expandirLongBarVertical");
     }
     else {
         document.getElementById("divVertical").classList.remove("expandirDivVertical");

@@ -8,7 +8,7 @@
     /*border: 1px solid black;*/
     font-size: 35px;
     color: #555;
-    font-family: "Comic Sans MS";
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     z-index: 1;
 }

@@ -28,14 +28,16 @@
 
         <div class="botaoLogin">
             <button type="button" id="btnLogar" onclick="login()">LOGIN</button>
-            <button type="button" id="redirectCadastro" onclick="redirect()">New here?</button>
+            <a href="javascript:void(0)" class="new-user" id="redirectCadastro" onclick="redirect();">New here?</a>
+            <!--<button type="button" id="redirectCadastro" onclick="redirect()">New here?</button>-->
         </div>
 
     </div>
 
     <div class="cadastrar" id="cadastrar">
         <div class="tituloCadastro">
-            NEW USER
+            <i class="material-icons" id="btnVoltar" onclick="voltar()">arrow_back</i>
+            <p>NEW USER</p>
             <span><i class="mdi mdi-movie mdi-48px"></i></span>
 
 
@@ -51,7 +53,6 @@
 
         <div class="botaoCadastro">
             <button type="button" id="btnCadastrar" onclick="cadastrar()">SUBMIT</button>
-                <i class="material-icons" id="btnVoltar" onclick="voltar()">arrow_back</i>
         </div>
     </div>
     <div id="snackbar" class="snackbar"></div>

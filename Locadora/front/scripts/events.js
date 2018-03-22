@@ -17,18 +17,13 @@ function darkTheme() {
 
     if (body === 'bodyDark'){
         document.getElementsByTagName("BODY")[0].classList.remove("bodyDark");
-        document.getElementById("listaFilmes").style.backgroundColor = "rgb(221, 221, 221)";
+        document.getElementById("listaFilmes").style.backgroundColor = "white";
     }
     else {
         document.getElementsByTagName("BODY")[0].classList.add("bodyDark");
         document.getElementById("listaFilmes").style.backgroundColor = "#2b2b2b";
+        // document.getElementById("")
     }
-
-    var teste = document.getElementById("listaFilmes").childNodes;
-    teste.forEach(function(item) {
-        document.getElementById(item.id.toString()).style.backgroundColor = "red";
-    })
-
 }
 
 function validaUser(btn) {
