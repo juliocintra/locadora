@@ -9,7 +9,7 @@ function mostrarSnackbar(message, status) {
     setTimeout(function () {
         snackBar.className = snackBar.className.replace("show", "");
 
-    }, 1500);
+    }, 2000);
 }
 
 function theme(body) {
