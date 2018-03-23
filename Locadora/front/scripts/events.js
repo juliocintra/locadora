@@ -6,31 +6,54 @@ function mostrarSnackbar(message, status) {
         snackBar.style.backgroundColor = '#09B548';
     else
         snackBar.style.backgroundColor = '#ea4b4b';
-    setTimeout(function(){
+    setTimeout(function () {
         snackBar.className = snackBar.className.replace("show", "");
 
     }, 1500);
 }
 
-function darkTheme() {
-    var body = document.getElementById("body").className;
+function theme(body) {
 
-    if (body === 'bodyDark'){
-        document.getElementsByTagName("BODY")[0].classList.remove("bodyDark");
-        document.getElementById("listaFilmes").style.backgroundColor = "white";
+    if (!localStorage.getItem('tema')) {
+        console.log('aaa');
+        localStorage.setItem('tema', body)
     }
     else {
+        if (localStorage.getItem('tema') === 'whiteTheme') {
+            document.getElementsByTagName("BODY")[0].classList.remove("bodyDark");
+            document.getElementsByTagName("BODY")[0].classList.add("whiteTheme");
+            document.getElementById("listaFilmes").style.backgroundColor = "white";
+            localStorage.setItem('tema', 'whiteTheme');
+        }
+        else {
+            document.getElementsByTagName("BODY")[0].classList.remove("whiteTheme");
+            document.getElementsByTagName("BODY")[0].classList.add("bodyDark");
+            document.getElementById("listaFilmes").style.backgroundColor = "#2b2b2b";
+            localStorage.setItem('tema', 'bodyDark');
+        }
+    }
+}
+
+function darkTheme() {
+    if (localStorage.getItem('tema') === 'bodyDark') {
+        document.getElementsByTagName("BODY")[0].classList.remove("bodyDark");
+        document.getElementsByTagName("BODY")[0].classList.add("whiteTheme");
+        document.getElementById("listaFilmes").style.backgroundColor = "white";
+        localStorage.setItem('tema', 'whiteTheme');
+    }
+    else {
+        document.getElementsByTagName("BODY")[0].classList.remove("whiteTheme");
         document.getElementsByTagName("BODY")[0].classList.add("bodyDark");
         document.getElementById("listaFilmes").style.backgroundColor = "#2b2b2b";
-        // document.getElementById("")
+        localStorage.setItem('tema', 'bodyDark');
     }
 }
 
 function validaUser(btn) {
-   console.log(btn.value);
-   // var regex = /^[a-z0-9_-]/;
-   // if (btn.value == regex) {
-   //    alert('FRACA');
-   // }
+    console.log(btn.value);
+    // var regex = /^[a-z0-9_-]/;
+    // if (btn.value == regex) {
+    //    alert('FRACA');
+    // }
 }
 

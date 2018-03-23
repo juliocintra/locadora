@@ -26,8 +26,8 @@ function exibirDetalhes(filme) {
     document.getElementById('urlPosterEditar').value = filme.urlPoster;
     document.getElementById("posterEditar").style.backgroundImage = "url('"+filme.urlPoster+"')";
     document.getElementById('urlTraillerEditar').value = filme.urlTrailler;
-    // document.getElementById('displayEditar').value = filme.quality;
-    // document.getElementById('qualityEditar').value = filme.quality;
+    document.getElementById('displayEditar').value = filme.quality;
+    document.getElementById('qualityEditar').value = filme.quality;
     document.getElementById('descriptionEditar').value = filme.description;
 
     if (filme.watched)

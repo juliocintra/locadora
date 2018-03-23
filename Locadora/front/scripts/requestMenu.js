@@ -71,6 +71,11 @@ function listarCategoriaDropDown(idCategory) {
 }
 
 function listarFilmes() {
+
+    var body = document.getElementById("body").className;
+
+    theme(body);
+
     var request = new XMLHttpRequest();
     request.open("GET", "https://watchlater.azurewebsites.net/api/user/"+localStorage.getItem("idUser")+"/movie");
     request.send();
