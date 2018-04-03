@@ -51,9 +51,5 @@ function darkTheme() {
 
 function validaUser(btn) {
     console.log(btn.value);
-    // var regex = /^[a-z0-9_-]/;
-    // if (btn.value == regex) {
-    //    alert('FRACA');
-    // }
 }
 

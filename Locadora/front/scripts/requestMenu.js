@@ -58,6 +58,14 @@ function listarCategoriaDropDown(idCategory) {
     }
 }
 
+function userLogin() {
+    if(localStorage.getItem("idUser") == null)
+        location.href = "login.html";
+    else
+        listarFilmes();
+
+}
+
 function listarFilmes() {
 
     var body = document.getElementById("body").className;

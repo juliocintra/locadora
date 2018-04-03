@@ -68,7 +68,6 @@
     width: 50px;
     height: 100%;
     position: fixed;
-    /*background-color: #00abff;*/
     -webkit-transition: all 0.15s linear;
     transition: all 0.15s linear;
     border-right: 1px solid gray;
@@ -91,7 +90,6 @@
     overflow: hidden;
     align-items: center;
     margin-top: 60px;
-    /*background-color: rgb(221, 221, 221);*/
 }
 
 .listaFilmes li {
@@ -100,20 +98,13 @@
     padding: 10px;
     border-bottom: 2px dotted gray;
     color: rgb(55, 199, 243);
-    /*color: white;*/
-    /*border-bottom-width: thin;*/
 }
-
-/*.listaFilmes li:first-child {*/
-    /*margin-top: px;*/
-/*}*/
 
 .listaFilmes li:hover {
     box-shadow: 0 0 7px rgba(33,33,33,1);
     transition: all 0.15s linear;
     background-color: rgb(221, 221, 221);
     cursor: pointer;
-    /*outline: none;*/
 }
 
 .listaFilmes li a {
@@ -150,10 +141,6 @@
     box-shadow: 0 0 7px rgba(33,33,33,1);
     transition: all 0.15s linear;
     background-color: #00abff;
-    /*-webkit-transition: all 0.15s linear;*/
-    /*-moz-transition: all 0.15s linear;*/
-    /*-o-transition: all 0.15s linear;*/
-    /*transition: transform 0.2s linear;*/
 }
 
 .btnAddSmall {
@@ -186,19 +173,10 @@
     margin-top: 10%;
     display: none;
     z-index: 3000;
-    /*margin-top: 100px;*/
-    /*background-color: lightgray;*/
 }
 
-/*.tema {*/
-    /*display: flex;*/
-    /*width: 170px;*/
-    /*padding: 10px;*/
-    /*border-bottom: 2px dotted gray;*/
-/*}*/
 
 .closeTrailler {
-    /*position: absolute;*/
     color: white;
     font-size: 30px;
     cursor: pointer;

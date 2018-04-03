@@ -52,12 +52,6 @@ function transitionMenu() {
 
         document.getElementById("barra2").classList.remove("hiddenBarra2");
         document.getElementById("barra2").classList.add("barra2");
-
-        // document.getElementById("menu").classList.remove("expandirMenu");
-        // document.getElementById("menu").classList.add("menu");
-        //
-        // document.getElementById("longBarVertical").classList.remove("expandirLongBarVertical");
-        // document.getElementById("longBarVertical").classList.add("longBarVertical");
     }
 
 }

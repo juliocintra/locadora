@@ -18,6 +18,8 @@ function fecharModal() {
     document.getElementById("divModal").style.display = "none";
     document.getElementById("divModalEditar").style.display = "none";
     document.getElementById("fundo").style.display = "none";
+
+    limparCampos();
 }
 
 function exibirDetalhes(filme) {
@@ -54,3 +56,10 @@ function openModalTrailler() {
     document.getElementById("fundo").style.display = "block";
 }
 
+function limparCampos() {
+    document.getElementById("tituloFilme").value = '';
+    document.getElementById("urlPoster").value = '';
+    document.getElementById("urlTrailler").value = '';
+    document.getElementById("description").value = '';
+    document.getElementById("dataWatched").value = '';
+}

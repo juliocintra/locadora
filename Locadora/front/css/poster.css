@@ -1,7 +1,4 @@
 .filmes {
-    /* border: 1px solid black; */
-    /* transition: all 0.3s; */
-    /* float: right; */
     width: 85%;
     margin-left: 200px;
     margin-top: 90px;
@@ -21,12 +18,6 @@
     border-radius: 10px;
     box-shadow: 3px 3px 3px grey;
     margin: 10px;
-    /* z-index: 1000; */
-    /* border: 1px solid black; */
-    /* display: flex; */
-    /* transition: all 0.3s; */
-    /*opacity: 0;*/
-    /* position: absolute; */
 }
 
 .detalhes {
