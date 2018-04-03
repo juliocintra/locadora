@@ -16,18 +16,6 @@ function validate(params) {
     if (params.urlTrailler === "")
         error.push("Fill in the fields");
 
-    // if (params.watched === "")
-    //     error.push("Peencha todos os campos");
-    //
-    // if (params.watchedDate === "")
-    //     error.push("Peencha todos os campos");
-    //
-    // if (params.quality === "")
-    //     error.push("Peencha todos os campos");
-    //
-    // if (params.description === "")
-    //     error.push("Peencha todos os campos");
-
     if (error[0] === undefined)
         error[0] = 0;
 
@@ -100,7 +88,6 @@ function listarFilmes() {
             }
         } else if (this.status === 400){
             console.log('deu ruim')
-
         }
     }
 }
@@ -152,7 +139,7 @@ function listarFilmePorId(id) {
                     exibirDetalhes(item);
                 }
                 else {
-                    console.log('nao foi');
+                    console.log('deu ruim');
                 }
             })
         }
@@ -255,8 +242,6 @@ function trailler(id) {
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var lista = JSON.parse(request.responseText);
-            console.log(lista);
-            console.log(id);
             lista.forEach(function(item) {
                 if (item.id == id) {
                     var urlTrailler = 'https://www.youtube.com/embed/' + item.urlTrailler.substring(32);
